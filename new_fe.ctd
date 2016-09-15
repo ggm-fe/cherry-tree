@@ -1,0 +1,2373 @@
+<?xml version="1.0" ?>
+<cherrytree>
+	<node custom_icon_id="0" foreground="" is_bold="False" name="FrontEnd" prog_lang="custom-colors" readonly="False" tags="" unique_id="1">
+		<rich_text link="webs https://habrahabr.ru/post/306716/">https://habrahabr.ru/post/306716/</rich_text>
+		<node custom_icon_id="0" foreground="" is_bold="False" name="html" prog_lang="custom-colors" readonly="False" tags="" unique_id="9">
+			<rich_text></rich_text>
+			<node custom_icon_id="0" foreground="" is_bold="False" name="block model" prog_lang="custom-colors" readonly="False" tags="" unique_id="10">
+				<rich_text>Элементы в браузере идут в виде прямоугольников.
+По умолчанию 
+	высота - по контенту
+	ширина - вся доступная
+
+Строчные элементы - занимают ширину по контенту
+Блочные элементы - занимают ширину по ширине body
+
+.box{
+	width: 900px;
+	height: 100px;
+	padding: 30px, 20px;
+	border: 1px solid #000;
+	background : #f3f3f3;
+}
+</rich_text>
+				<node custom_icon_id="0" foreground="" is_bold="False" name="block elements" prog_lang="custom-colors" readonly="False" tags="" unique_id="11">
+					<rich_text>ширина и высота задается, если не задана, то на все доступное пространство (body)
+
+при перечислении идут друг за другом  без пробелов
+margin -   корректно
+padding  - действует
+
+
+Схлопывание margin 
+(сравнивают отсупы друг у друга, оставляя максимальный из двух)
+
+В строчные элементы нельзя вставлять блочные!!!
+
+</rich_text>
+				</node>
+				<node custom_icon_id="0" foreground="" is_bold="False" name="string elements" prog_lang="custom-colors" readonly="False" tags="" unique_id="12">
+					<rich_text>ширина и высота по контексту, ЗАДАТЬ НЕЛЬЗЯ!!!
+
+при перечислении идут друг за другом  с пробелом
+margin -  действует не корректно
+padding  - действует
+
+все эти проблемы лечим добавлением 
+display: block;
+что делает элементы блочными
+
+В строчные элементы нельзя вставлять блочные!!</rich_text>
+				</node>
+			</node>
+			<node custom_icon_id="0" foreground="" is_bold="False" name="elements" prog_lang="custom-colors" readonly="False" tags="" unique_id="22">
+				<rich_text></rich_text>
+				<node custom_icon_id="0" foreground="" is_bold="False" name="table" prog_lang="custom-colors" readonly="False" tags="" unique_id="13">
+					<rich_text>&lt;table&gt;
+  &lt;tr&gt;             линия таблицы
+    &lt;th&gt;&lt;/th&gt;
+    &lt;td&gt;&lt;/td&gt; ячейка таблицы
+    &lt;td&gt;&lt;/td&gt; ячейка таблицы
+  &lt;/tr&gt;
+&lt;/table&gt;
+
+
+Вместо &lt;td&gt; можно использовать &lt;th&gt; для заголовков колонок.
+Ячейки таблицы с заголовком помещаются только в первой линии &lt;tr&gt;</rich_text>
+				</node>
+				<node custom_icon_id="0" foreground="" is_bold="False" name="form" prog_lang="custom-colors" readonly="False" tags="" unique_id="14">
+					<rich_text>&lt;form action=&quot;#&quot; method=&quot;post&quot;&gt;
+
+    &lt;input type=&quot;text&quot; name=&quot;feedback&quot; id=&quot;iniq1&quot;&gt;  // текстовое поле где value  - содержимое, введенное пользователем
+    
+    &lt;input type=&quot;submit&quot; value=&quot;Отправить отзыв&quot;&gt;  // кпопка отправит на сервер пары “name” + &quot;value&quot;
+    
+&lt;/form&gt;                  //контейнер для input - полей ввода информации
+
+
+for form new attribute:
+	</rich_text>
+					<rich_text weight="heavy">required</rich_text>
+					<rich_text>=&quot;required&quot; так 
+	</rich_text>
+					<rich_text weight="heavy">required</rich_text>
+					<rich_text>			или так  - одинаково. Поле обязательное для ввода</rich_text>
+					<node custom_icon_id="0" foreground="" is_bold="False" name="text area" prog_lang="custom-colors" readonly="False" tags="" unique_id="15">
+						<rich_text>&lt;form action=&quot;#&quot; method=&quot;post&quot;&gt;
+	&lt;textarea name=&quot;&quot; id=&quot;&quot; cols=&quot;30&quot; rows=&quot;10&quot;&gt;&lt;/textarea&gt;
+&lt;/form&gt;</rich_text>
+					</node>
+					<node custom_icon_id="0" foreground="" is_bold="False" name="radio" prog_lang="custom-colors" readonly="False" tags="" unique_id="16">
+						<rich_text>&lt;form action=&quot;&quot;&gt;
+	&lt;div&gt;&lt;input type=&quot;radio&quot; name=&quot;aaa&quot; id=&quot;&quot;&gt;&lt;span&gt;AAA 1&lt;/span&gt;&lt;/div&gt;
+	&lt;div&gt;&lt;input type=&quot;radio&quot; name=&quot;aaa&quot; id=&quot;&quot;&gt;&lt;span&gt;AAA 2&lt;/span&gt;&lt;/div&gt;
+	&lt;div&gt;&lt;input type=&quot;radio&quot; name=&quot;aaa&quot; id=&quot;&quot;&gt;&lt;span&gt;AAA 3&lt;/span&gt;&lt;/div&gt;
+	&lt;div&gt;&lt;input type=&quot;radio&quot; name=&quot;aaa&quot; id=&quot;b4&quot;&gt;&lt;label for=&quot;b4&quot;&gt;AAA 4&lt;/label&gt;&lt;/div&gt;
+&lt;/form&gt;
+
+
+Одна группа позволяет выбрать только ОДНУ радиокнопку.
+
+span&gt;AAA 1&lt;/span&gt; отображает текст, описывающий значение радиокнопки
+
+id=&quot;c1&quot; передает выбранное пользователем значени</rich_text>
+					</node>
+					<node custom_icon_id="0" foreground="" is_bold="False" name="checkbox" prog_lang="custom-colors" readonly="False" tags="" unique_id="17">
+						<rich_text>&lt;form action=&quot;&quot;&gt;
+	&lt;div&gt;&lt;input type=&quot;checkbox&quot; name=&quot;a1&quot; id=&quot;c1&quot;&gt;&lt;label for=&quot;c1&quot;&gt;BBB 1&lt;/label&gt;&lt;/div&gt;
+	&lt;div&gt;&lt;input type=&quot;checkbox&quot; name=&quot;a2&quot; id=&quot;c2&quot;&gt;&lt;label for=&quot;c2&quot;&gt;BBB 2&lt;/label&gt;&lt;/div&gt;
+	&lt;div&gt;&lt;input type=&quot;checkbox&quot; name=&quot;a3&quot; id=&quot;c3&quot;&gt;&lt;label for=&quot;c3&quot;&gt;BBB 3&lt;/label&gt;&lt;/div&gt;
+	&lt;div&gt;&lt;input type=&quot;checkbox&quot; name=&quot;a4&quot; id=&quot;c4&quot;&gt;&lt;label for=&quot;c4&quot;&gt;BBB 4&lt;/label&gt;&lt;/div&gt;
+	
+	 &lt;input type=&quot;submit&quot; value=&quot;Отправить отзыв&quot;&gt;  // кпопка отправит на сервер пары “name” + &quot;value&quot;
+&lt;/form&gt;
+
+
+name=&quot;a1&quot; ... “а2” - используется для того, чтобы на сервер ушли пары “name” + &quot;value&quot;
+
+
+&lt;label for=&quot;c1&quot;&gt;BBB 1&lt;/label&gt;  отображает текст, описывающий значение чекбокса и позволяет ВЫБИРАТЬ кликом по тексту
+
+&quot;с1&quot; связывает через for и  id и label input</rich_text>
+					</node>
+				</node>
+				<node custom_icon_id="0" foreground="" is_bold="False" name="a" prog_lang="custom-colors" readonly="False" tags="" unique_id="18">
+					<rich_text>&lt;a href=&quot;http://google.com&quot; target=&quot;_blank&quot; title=&quot;Поисковик&quot; &gt;GOOGLE&lt;/a&gt;</rich_text>
+				</node>
+				<node custom_icon_id="0" foreground="" is_bold="False" name="list" prog_lang="custom-colors" readonly="False" tags="" unique_id="19">
+					<rich_text>ordered list
+
+TYPE=&quot;I&quot;|&quot;A&quot;|&quot;1&quot;|&quot;a&quot;|&quot;i&quot;
+
+ &quot;I&quot; causes the items to be numbered I, II, III, IV, V, VI, VII, etc.
+&quot;A&quot; causes the items to be numbered A, B, C, D, E, F, G, etc.
+&quot;1&quot; (the default) causes the items to be numbered 1, 2, 3, 4, 5, 6, 7, etc. -             default
+&quot;a&quot; causes the items to be numbered a, b, c, d, e, f, g, etc.
+&quot;i&quot; cause the items to be numbered i, ii, iii, iv, v, vi, vii, etc.
+
+start=&quot;1&quot;|&quot;2&quot;|&quot;3&quot;|...|&quot;N&quot;:
+start=&quot;4&quot;
+for TYPE=&quot;I&quot; that item would be “IV”;
+for TYPE=&quot;A&quot; that item would be “D”;
+for TYPE=&quot;1&quot; that item would be “4”;
+for TYPE=&quot;a&quot; that item would be “d”;
+for TYPE=&quot;i&quot; that item would be “iv.” 
+
+
+
+
+
+unsordered list
+
+TYPE=&quot;DISC&quot;|&quot;SQUARE&quot;|&quot;CIRCLE&quot;:
+&quot;DISC&quot;  -  default
+&quot;SQUARE&quot;
+&quot;CIRCLE&quot;
+
+ol,ul{
+	list-style: none;
+}
+
+</rich_text>
+				</node>
+				<node custom_icon_id="0" foreground="" is_bold="False" name="img" prog_lang="custom-colors" readonly="False" tags="" unique_id="20">
+					<rich_text>&lt;img src=&quot;image/ggm125.jpg&quot; width=&quot;200&quot; height=&quot;150&quot; alt=&quot;ggm&quot; title=&quot;Gennadiy&quot; class=&quot;image&quot;&gt;</rich_text>
+				</node>
+				<node custom_icon_id="0" foreground="" is_bold="False" name="link" prog_lang="custom-colors" readonly="False" tags="" unique_id="21">
+					<rich_text>&lt;link rel=&quot;stylesheet&quot; href=&quot;css/style.css&quot;</rich_text>
+				</node>
+			</node>
+		</node>
+		<node custom_icon_id="0" foreground="" is_bold="False" name="css" prog_lang="custom-colors" readonly="False" tags="" unique_id="23">
+			<rich_text></rich_text>
+			<node custom_icon_id="0" foreground="" is_bold="False" name="form " prog_lang="custom-colors" readonly="False" tags="" unique_id="24">
+				<rich_text></rich_text>
+			</node>
+			<node custom_icon_id="0" foreground="" is_bold="False" name="media" prog_lang="custom-colors" readonly="False" tags="" unique_id="26">
+				<rich_text>@media (min-width: 960px) { }
+
+@media (min-width: 768px) and (max-width: 959px) {}
+
+@media (max-width: 767px) and (min-width: 460px) {}
+
+@media (max-width: 459px) { }
+
+
+
+CSS распознает десять различных типов устройств: 
+all , screen, print ,
+
+braille ,
+embossed , 
+handheld , 
+projection , 
+screen , 
+tty и 
+tv .
+
+Стиль только для принтера
+&lt;link rel=&quot;stylesheet&quot; media=&quot;print&quot; href=&quot;print.css&quot;/&gt;
+
+но можно и так (более трудоемко)
+@media print {
+  h1 {
+    font-size: 24pt;
+  }
+  p {
+    font-size: 12pt;
+  }
+}
+
+браузеры </rich_text>
+				<rich_text weight="heavy">не печатают</rich_text>
+				<rich_text> фоновые изображения!!!
+
+можно/нужно использовать </rich_text>
+				<rich_text foreground="#b0b02a2a3030">!i</rich_text>
+				<rich_text>mportant 
+
+
+для печати лучше использовать пункты, т.к. для печати все равно пересчитывается в пункты.
+(16 пикселов это 12 пунктов)
+
+@media p {
+  font-size: 12pt !important ;
+  color: #000 !important ;
+  background: #FFF !important ;;
+}
+Используя краткое свойство </rich_text>
+				<rich_text weight="heavy">background</rich_text>
+				<rich_text>, вы устанавливаете белый фон и удаляете изображения.
+
+разрешаем перенос слов для печати длинных ссылок
+a {
+word-wrap: break-word;
+}
+
+Напечатайте ссылку (с относительными ссылками бороться сложнее):
+a[href^=&quot;http://&quot;]:after {
+content: &quot; (&quot; attr(href) &quot;) &quot;;
+}
+</rich_text>
+			</node>
+			<node custom_icon_id="0" foreground="" is_bold="False" name="add files css" prog_lang="custom-colors" readonly="False" tags="" unique_id="32">
+				<rich_text>index.html
+css/main.css
+css/layout.css
+css/color.css
+css/forms.css
+
+html: &lt;link href=&quot;css/main.css&quot; rel=&quot;stylesheet&quot;&gt;
+
+main.css:
+@import url(main.css);
+@import url(layout.css);
+@import url(color.css);
+@import url(forms.css);
+</rich_text>
+			</node>
+			<node custom_icon_id="0" foreground="" is_bold="False" name="cash update" prog_lang="custom-colors" readonly="False" tags="" unique_id="33">
+				<rich_text>принудительно обновим кэш 
+
+
+Такая запись обращения к файлу main.css обрабатывается 
+как обычно
+&lt;link rel=&quot;stylesheet&quot; href=&quot;main.css?v=1&quot;&gt;
+
+но изменения после знака ? воспринимаются как новый файл
+main.css и происходит обновление кэша
+&lt;link rel=&quot;stylesheet&quot; href=&quot;main.css?v=2&quot;&gt;
+
+способ автоматизации автообновлений 
+http://ikeif.net/2009/03/27/stop-caching-files-php-function</rich_text>
+			</node>
+			<node custom_icon_id="0" foreground="" is_bold="False" name="zero" prog_lang="custom-colors" readonly="False" tags="" unique_id="34">
+				<rich_text>/* сброс стилей браузера */
+</rich_text>
+				<rich_text foreground="#a5a52a2a2a2a">html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p,
+blockquote, 	pre, a, abbr, acronym, address, big, cite, code, del, dfn,
+em, img, ins, kbd, 	 q, s, samp,small, strike, strong, sub, sup, tt,
+var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label,
+legend,
+table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas,
+details, embed,
+figure, figcaption, footer, header, hgroup, menu, nav, output, ruby,
+section, summary,
+time, mark, audio, video {
+	 margin: 0;
+	 padding: 0;
+	 border: 0;
+	 font-size: 100%;
+	 vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup,
+menu, nav, section {
+	 display: block;
+}
+
+body {
+	 line-height: 1.2;
+}
+
+table {
+	 border-collapse: collapse;
+	 border-spacing: 0;
+}
+
+ol {
+	 padding-left: 1.4em;
+	 list-style: decimal;
+}
+
+ul {
+	 padding-left: 1.4em;
+	 list-style: square;
+}
+
+blockquote, q {
+	 quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+	 content: '';
+	 content: none;
+}</rich_text>
+				<rich_text>
+/* завершение сброса стилей браузера */</rich_text>
+			</node>
+			<node custom_icon_id="0" foreground="" is_bold="False" name="IE8" prog_lang="custom-colors" readonly="False" tags="" unique_id="35">
+				<rich_text></rich_text>
+			</node>
+			<node custom_icon_id="0" foreground="" is_bold="False" name="изменить размер изображения касанием" prog_lang="custom-colors" readonly="False" tags="" unique_id="37">
+				<rich_text>Чтобы обеспечить надлежащий рендеринг и изменение размера касанием, добавьте метатег viewport в ваш &lt;head&gt;.
+
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+
+ограничить возможности приближения на мобильных устройствах добавляя user-scalable=no 
+
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no&quot;&gt;
+
+</rich_text>
+			</node>
+			<node custom_icon_id="0" foreground="" is_bold="False" name="border-radius" prog_lang="custom-colors" readonly="False" tags="" unique_id="92">
+				<rich_text link="webs http://stackoverflow.com/questions/29966499/border-radius-in-percentage-and-pixels-px">http://stackoverflow.com/questions/29966499/border-radius-in-percentage-and-pixels-px</rich_text>
+				<rich_text>
+
+</rich_text>
+				<rich_text scale="h2">div {
+  width: 230px;
+  height: 100px;
+}</rich_text>
+				<rich_text>
+
+</rich_text>
+				<rich_text scale="h2"> border-radius: 50%; == border-radius: 115px/50px;</rich_text>
+			</node>
+		</node>
+		<node custom_icon_id="0" foreground="" is_bold="False" name="jquery" prog_lang="custom-colors" readonly="False" tags="" unique_id="39">
+			<rich_text></rich_text>
+			<node custom_icon_id="0" foreground="" is_bold="False" name="template" prog_lang="custom-colors" readonly="False" tags="" unique_id="43">
+				<rich_text>// Simple JavaScript Templating
+// John Resig - </rich_text>
+				<rich_text link="webs http://ejohn.org/">http://ejohn.org/</rich_text>
+				<rich_text> - MIT Licensed
+(function () {
+  var cache = {};
+
+  this.tmpl = function tmpl(str, data) {
+    // Figure out if we're getting a template, or if we need to
+    // load the template - and be sure to cache the result.
+    var fn = !/\W/.test(str) ?
+      cache[str] = cache[str] ||
+      tmpl(document.getElementById(str).innerHTML) :
+
+      // Generate a reusable function that will serve as a template
+      // generator (and which will be cached).
+      new Function(&quot;obj&quot;,
+        &quot;var p=[],print=function(){p.push.apply(p,arguments);};&quot; +
+
+        // Introduce the data as local variables using with(){}
+        &quot;with(obj){p.push('&quot; +
+
+        // Convert the template into pure JavaScript
+        str
+        .replace(/[\r\t\n]/g, &quot; &quot;)
+        .split(&quot;&lt;%&quot;).join(&quot;\t&quot;)
+        .replace(/((^|%&gt;)[^\t]*)'/g, &quot;$1\r&quot;)
+        .replace(/\t=(.*?)%&gt;/g, &quot;',$1,'&quot;)
+        .split(&quot;\t&quot;).join(&quot;');&quot;)
+        .split(&quot;%&gt;&quot;).join(&quot;p.push('&quot;)
+        .split(&quot;\r&quot;).join(&quot;\\'&quot;) + &quot;');}return p.join('');&quot;);
+
+    // Provide some basic currying to the user
+    return data ? fn(data) : fn;
+  };
+})();</rich_text>
+				<node custom_icon_id="0" foreground="" is_bold="False" name="html" prog_lang="custom-colors" readonly="False" tags="" unique_id="58">
+					<rich_text>&lt;body&gt;
+
+    &lt;script type=&quot;text/tmpl&quot; id=&quot;test&quot;&gt;  // подставляем переменную title
+         
+          &lt;h1&gt;&lt;%=title%&gt;&lt;/h1&gt;
+         
+      &lt;/script&gt;
+
+      &lt;script src=&quot;../template.js&quot;&gt;&lt;/script&gt;
+      &lt;script src=&quot;jscript.js&quot;&gt;&lt;/script&gt;
+      
+&lt;/body&gt;</rich_text>
+				</node>
+				<node custom_icon_id="0" foreground="" is_bold="False" name="script" prog_lang="custom-colors" readonly="False" tags="" unique_id="59">
+					<rich_text>var createTest = {
+  title: 'Тест '
+};
+</rich_text>
+				</node>
+			</node>
+			<node custom_icon_id="0" foreground="" is_bold="False" name="tabs" prog_lang="custom-colors" readonly="False" tags="" unique_id="93">
+				<rich_text scale="h2">(function($) {
+$(function() {
+
+	$('ul.tabs__caption').on('click', 'li:not(.active)', function() {
+		$(this)
+			.addClass('active').siblings().removeClass('active')
+			.closest('div.tabs').find('div.tabs__content').removeClass('active').eq($(this).index()).addClass('active');
+	});
+
+});
+})(jQuery);</rich_text>
+			</node>
+			<node custom_icon_id="0" foreground="" is_bold="False" name="input help " prog_lang="custom-colors" readonly="False" tags="" unique_id="94">
+				<rich_text scale="h2">// Hover
+
+$('.label').hover(
+	function(){
+		$(this).next('.help').stop().fadeIn();
+	},
+    function(){
+    	$('.help').stop().fadeOut();
+    });
+
+// focus with Tab
+
+$('.label').focusin(function(){
+	$(this).next('.help').stop().fadeIn();
+});
+$('.label').focusout(function(){
+	$('.help').stop().fadeOut();
+});
+
+//click 'Show-Help' 
+
+$('.show-help').on('click', function(){
+  $('.help').css('display', 'inline-block');
+});
+</rich_text>
+			</node>
+			<node custom_icon_id="0" foreground="" is_bold="False" name="how to write a plugin" prog_lang="custom-colors" readonly="False" tags="" unique_id="100">
+				<rich_text link="webs https://habrahabr.ru/post/158235/">https://habrahabr.ru/post/158235/</rich_text>
+			</node>
+			<node custom_icon_id="0" foreground="" is_bold="False" name="DOM-Ready. " prog_lang="custom-colors" readonly="False" tags="" unique_id="104">
+				<rich_text scale="h2">$(document).ready(function(){
+ // тут весь ваш код
+});
+
+ // или сокращенная запись
+
+$(function(){
+// тут весь ваш код
+ });</rich_text>
+				<rich_text>
+</rich_text>
+			</node>
+			<node custom_icon_id="0" foreground="" is_bold="False" name="делегированная обработка событий для динамических элементов" prog_lang="custom-colors" readonly="False" tags="" unique_id="105">
+				<rich_text scale="h2">$('static_parent').on('event', 'dinamic_child', handler);
+
+• static_parent - статичный родительский элемент
+• event - событие
+• dinamic_child - динамический дочерний элемент
+• handler - функция-обработчик
+</rich_text>
+				<rich_text>
+
+</rich_text>
+				<rich_text scale="h2">$('.my_block').on('click', '.my_link', function(){
+     // действия при клике
+ });
+</rich_text>
+				<rich_text>
+</rich_text>
+				<rich_text scale="h3">объект $(this) внутри обработчика - это именно ссылка &quot;.my_link&quot;, на которой событие было вызвано, 
+а не родительский элемент &quot;.my_block&quot;, как это бы было при обычной записи, а не делегированной.</rich_text>
+				<rich_text>1. </rich_text>
+				<rich_text foreground="#000000">$</rich_text>
+				<rich_text foreground="#666600">(</rich_text>
+				<rich_text foreground="#008800">'div'</rich_text>
+				<rich_text foreground="#666600">);</rich_text>
+				<rich_text foreground="#000000"> </rich_text>
+				<rich_text foreground="#880000">// выберет все элементы &quot;div&quot;</rich_text>
+				<rich_text>
+
+2. </rich_text>
+				<rich_text foreground="#000000">$</rich_text>
+				<rich_text foreground="#666600">(</rich_text>
+				<rich_text foreground="#008800">'#my_element'</rich_text>
+				<rich_text foreground="#666600">);</rich_text>
+				<rich_text foreground="#000000"> </rich_text>
+				<rich_text foreground="#880000">// выберет единственный (*см. ниже) элемент с атрибутом id равным &quot;my_element&quot;</rich_text>
+				<rich_text>
+
+3. </rich_text>
+				<rich_text foreground="#000000">$</rich_text>
+				<rich_text foreground="#666600">(</rich_text>
+				<rich_text foreground="#008800">'.my_element'</rich_text>
+				<rich_text foreground="#666600">);</rich_text>
+				<rich_text foreground="#000000"> </rich_text>
+				<rich_text foreground="#880000">// выберет все элементы на странице с классом &quot;my_element&quot;</rich_text>
+				<rich_text>
+
+4. </rich_text>
+				<rich_text foreground="#000000">$</rich_text>
+				<rich_text foreground="#666600">(</rich_text>
+				<rich_text foreground="#008800">'.my_element.other_class'</rich_text>
+				<rich_text foreground="#666600">);</rich_text>
+				<rich_text foreground="#000000"> </rich_text>
+				<rich_text foreground="#880000">// выберет элементы на странице с классом &quot;my_element&quot;, у которых так же есть класс &quot;other_class&quot;</rich_text>
+				<rich_text>
+
+5. </rich_text>
+				<rich_text foreground="#000000">$</rich_text>
+				<rich_text foreground="#666600">(</rich_text>
+				<rich_text foreground="#008800">'#my_element .my_element'</rich_text>
+				<rich_text foreground="#666600">);</rich_text>
+				<rich_text foreground="#000000"> </rich_text>
+				<rich_text foreground="#880000">// выберет все дочерние элементы с классом &quot;my_element&quot; у родительского с id = &quot;my_element&quot;</rich_text>
+				<rich_text>
+
+6. </rich_text>
+				<rich_text foreground="#000000">$</rich_text>
+				<rich_text foreground="#666600">(</rich_text>
+				<rich_text foreground="#008800">'[name=my_name]'</rich_text>
+				<rich_text foreground="#666600">);</rich_text>
+				<rich_text foreground="#000000"> </rich_text>
+				<rich_text foreground="#880000">// выберет элементы, у которых атрибут name равен my_name</rich_text>
+				<rich_text>
+
+7. </rich_text>
+				<rich_text foreground="#000000">$</rich_text>
+				<rich_text foreground="#666600">(</rich_text>
+				<rich_text foreground="#008800">'[name=^my_name]'</rich_text>
+				<rich_text foreground="#666600">);</rich_text>
+				<rich_text foreground="#000000"> </rich_text>
+				<rich_text foreground="#880000">// выберет элементы, у которых значение атрибута name начинается на &quot;my_name&quot;</rich_text>
+				<rich_text>
+
+8. </rich_text>
+				<rich_text foreground="#000000">$</rich_text>
+				<rich_text foreground="#666600">(</rich_text>
+				<rich_text foreground="#008800">':checkbox'</rich_text>
+				<rich_text foreground="#666600">);</rich_text>
+				<rich_text foreground="#000000"> </rich_text>
+				<rich_text foreground="#880000">// выберет все элементы input с типом &quot;checkbox&quot;</rich_text>
+				<rich_text>
+
+</rich_text>
+			</node>
+			<node custom_icon_id="0" foreground="" is_bold="False" name="selectors" prog_lang="custom-colors" readonly="False" tags="" unique_id="106">
+				<rich_text background="#adadd8d8e6e6" foreground="#000000" scale="h2">$</rich_text>
+				<rich_text background="#adadd8d8e6e6" foreground="#666600" scale="h2">(</rich_text>
+				<rich_text background="#adadd8d8e6e6" foreground="#008800" scale="h2">'div'</rich_text>
+				<rich_text background="#adadd8d8e6e6" foreground="#666600" scale="h2">);</rich_text>
+				<rich_text background="#adadd8d8e6e6" foreground="#000000" scale="h2"> </rich_text>
+				<rich_text background="#adadd8d8e6e6" foreground="#880000" scale="h2">// выберет все элементы &quot;div&quot;</rich_text>
+				<rich_text background="#adadd8d8e6e6" scale="h2">
+</rich_text>
+				<rich_text background="#adadd8d8e6e6" foreground="#000000" scale="h2">$</rich_text>
+				<rich_text background="#adadd8d8e6e6" foreground="#666600" scale="h2">(</rich_text>
+				<rich_text background="#adadd8d8e6e6" foreground="#008800" scale="h2">'#my_element'</rich_text>
+				<rich_text background="#adadd8d8e6e6" foreground="#666600" scale="h2">);</rich_text>
+				<rich_text background="#adadd8d8e6e6" foreground="#000000" scale="h2"> </rich_text>
+				<rich_text background="#adadd8d8e6e6" foreground="#880000" scale="h2">// выберет единственный (*см. ниже) элемент с атрибутом id равным &quot;my_element&quot;</rich_text>
+				<rich_text background="#adadd8d8e6e6" scale="h2">
+</rich_text>
+				<rich_text background="#adadd8d8e6e6" foreground="#000000" scale="h2">$</rich_text>
+				<rich_text background="#adadd8d8e6e6" foreground="#666600" scale="h2">(</rich_text>
+				<rich_text background="#adadd8d8e6e6" foreground="#008800" scale="h2">'.my_element'</rich_text>
+				<rich_text background="#adadd8d8e6e6" foreground="#666600" scale="h2">);</rich_text>
+				<rich_text background="#adadd8d8e6e6" foreground="#000000" scale="h2"> </rich_text>
+				<rich_text background="#adadd8d8e6e6" foreground="#880000" scale="h2">// выберет все элементы на странице с классом &quot;my_element&quot;</rich_text>
+				<rich_text background="#adadd8d8e6e6" scale="h2">
+</rich_text>
+				<rich_text background="#adadd8d8e6e6" foreground="#000000" scale="h2">$</rich_text>
+				<rich_text background="#adadd8d8e6e6" foreground="#666600" scale="h2">(</rich_text>
+				<rich_text background="#adadd8d8e6e6" foreground="#008800" scale="h2">'.my_element.other_class'</rich_text>
+				<rich_text background="#adadd8d8e6e6" foreground="#666600" scale="h2">);</rich_text>
+				<rich_text background="#adadd8d8e6e6" foreground="#000000" scale="h2"> </rich_text>
+				<rich_text background="#adadd8d8e6e6" foreground="#880000" scale="h2">// выберет элементы на странице с классом &quot;my_element&quot;, у которых так же есть класс &quot;other_class&quot;</rich_text>
+				<rich_text background="#adadd8d8e6e6" scale="h2">
+</rich_text>
+				<rich_text background="#adadd8d8e6e6" foreground="#000000" scale="h2">$</rich_text>
+				<rich_text background="#adadd8d8e6e6" foreground="#666600" scale="h2">(</rich_text>
+				<rich_text background="#adadd8d8e6e6" foreground="#008800" scale="h2">'#my_element .my_element'</rich_text>
+				<rich_text background="#adadd8d8e6e6" foreground="#666600" scale="h2">);</rich_text>
+				<rich_text background="#adadd8d8e6e6" foreground="#000000" scale="h2"> </rich_text>
+				<rich_text background="#adadd8d8e6e6" foreground="#880000" scale="h2">// выберет все дочерние элементы с классом &quot;my_element&quot; у родительского с id = &quot;my_element&quot;</rich_text>
+				<rich_text background="#adadd8d8e6e6" scale="h2">
+</rich_text>
+				<rich_text background="#adadd8d8e6e6" foreground="#000000" scale="h2">$</rich_text>
+				<rich_text background="#adadd8d8e6e6" foreground="#666600" scale="h2">(</rich_text>
+				<rich_text background="#adadd8d8e6e6" foreground="#008800" scale="h2">'[name=my_name]'</rich_text>
+				<rich_text background="#adadd8d8e6e6" foreground="#666600" scale="h2">);</rich_text>
+				<rich_text background="#adadd8d8e6e6" foreground="#000000" scale="h2"> </rich_text>
+				<rich_text background="#adadd8d8e6e6" foreground="#880000" scale="h2">// выберет элементы, у которых атрибут name равен my_name</rich_text>
+				<rich_text background="#adadd8d8e6e6" scale="h2">
+</rich_text>
+				<rich_text background="#adadd8d8e6e6" foreground="#000000" scale="h2">$</rich_text>
+				<rich_text background="#adadd8d8e6e6" foreground="#666600" scale="h2">(</rich_text>
+				<rich_text background="#adadd8d8e6e6" foreground="#008800" scale="h2">'[name=^my_name]'</rich_text>
+				<rich_text background="#adadd8d8e6e6" foreground="#666600" scale="h2">);</rich_text>
+				<rich_text background="#adadd8d8e6e6" foreground="#000000" scale="h2"> </rich_text>
+				<rich_text background="#adadd8d8e6e6" foreground="#880000" scale="h2">// выберет элементы, у которых значение атрибута name начинается на &quot;my_name&quot;</rich_text>
+				<rich_text background="#adadd8d8e6e6" scale="h2">
+</rich_text>
+				<rich_text background="#adadd8d8e6e6" foreground="#000000" scale="h2">$</rich_text>
+				<rich_text background="#adadd8d8e6e6" foreground="#666600" scale="h2">(</rich_text>
+				<rich_text background="#adadd8d8e6e6" foreground="#008800" scale="h2">':checkbox'</rich_text>
+				<rich_text background="#adadd8d8e6e6" foreground="#666600" scale="h2">);</rich_text>
+				<rich_text background="#adadd8d8e6e6" foreground="#000000" scale="h2"> </rich_text>
+				<rich_text background="#adadd8d8e6e6" foreground="#880000" scale="h2">// выберет все элементы input с типом &quot;checkbox&quot;</rich_text>
+				<rich_text background="#adadd8d8e6e6" scale="h2">
+
+
+</rich_text>
+			</node>
+		</node>
+		<node custom_icon_id="0" foreground="" is_bold="False" name="lodash" prog_lang="custom-colors" readonly="False" tags="" unique_id="40">
+			<rich_text></rich_text>
+		</node>
+		<node custom_icon_id="0" foreground="" is_bold="False" name="api" prog_lang="custom-colors" readonly="False" tags="" unique_id="61">
+			<rich_text></rich_text>
+			<node custom_icon_id="0" foreground="" is_bold="False" name="bing" prog_lang="custom-colors" readonly="False" tags="" unique_id="62">
+				<rich_text>$.ajax({
+      url: &quot;</rich_text>
+				<rich_text link="webs https://bingapis.azure-api.net/api/v5/search/?&quot;">https://bingapis.azure-api.net/api/v5/search/?&quot;</rich_text>
+				<rich_text> + $.param(params),
+      beforeSend: function(xhrObj){
+          // Request headers
+          xhrObj.setRequestHeader(&quot;Ocp-Apim-Subscription-Key&quot;,&quot;75a3172f29674920af1bea85d3f93900&quot;);
+      },
+      type: &quot;GET&quot;,
+      // Request body
+      data: &quot;{body}&quot;,
+    })</rich_text>
+			</node>
+		</node>
+		<node custom_icon_id="0" foreground="" is_bold="False" name="trics" prog_lang="custom-colors" readonly="False" tags="" unique_id="63">
+			<rich_text></rich_text>
+			<node custom_icon_id="0" foreground="" is_bold="False" name="send form after press ENTER" prog_lang="custom-colors" readonly="False" tags="" unique_id="27">
+				<rich_text>HTML
+&lt;form&gt;
+    &lt;textarea&gt;&lt;/textarea&gt;
+    &lt;input type=&quot;submit&quot; value=&quot;Submit&quot;/&gt;
+&lt;/form&gt;
+
+JS
+$(&quot;textarea&quot;).keyup(function(event){
+    if(event.keyCode == 13){
+        $(&quot;form&quot;).submit();
+    }
+});
+
+$(&quot;form&quot;).on('submit', function(e){
+    e.preventDefault();
+    alert('abcde');
+});</rich_text>
+			</node>
+			<node custom_icon_id="0" foreground="" is_bold="False" name="free style for radio &amp; checkbox icon" prog_lang="custom-colors" readonly="False" tags="" unique_id="25">
+				<rich_text>    There is a way to do this using just css. 
+    We can (ab)use the label  element and style that instead. 
+    The caveat is that this will not work  for IE8 and lower versions.
+CSS:
+
+.myCheckbox input {     
+    display: none; 
+}  
+
+.myCheckbox span {    
+     width: 20px;
+     height: 20px;     
+     display: block;     
+     background: url(&quot;link_to_image&quot;); 
+}  
+
+.myCheckbox input:checked + span {
+     background: url(&quot;link_to_another_image&quot;); 
+}
+
+HTML:    
+&lt;label for=&quot;test&quot;&gt;Label for my styled &quot;checkbox&quot;&lt;/label&gt; 
+&lt;label class=&quot;myCheckbox&quot;&gt;     
+&lt;input type=&quot;checkbox&quot; name=&quot;test&quot;/&gt;     
+&lt;span&gt;&lt;/span&gt; 
+&lt;/label&gt;    </rich_text>
+			</node>
+			<node custom_icon_id="0" foreground="" is_bold="False" name="help " prog_lang="custom-colors" readonly="False" tags="" unique_id="64">
+				<rich_text></rich_text>
+			</node>
+			<node custom_icon_id="0" foreground="" is_bold="False" name="fixed-backgrounds" prog_lang="custom-colors" readonly="False" tags="" unique_id="65">
+				<rich_text scale="h2">https://css-tricks.com/use-cases-fixed-backgrounds-css/</rich_text>
+				<rich_text>
+
+</rich_text>
+				<rich_text scale="h2">https://codyhouse.co/gem/page-scroll-effects/</rich_text>
+			</node>
+			<node custom_icon_id="0" foreground="" is_bold="False" name="текст обрезается " prog_lang="custom-colors" readonly="False" tags="" unique_id="66">
+				<rich_text>https://habrahabr.ru/post/212603/</rich_text>
+			</node>
+			<node custom_icon_id="0" foreground="" is_bold="False" name="telephone" prog_lang="custom-colors" readonly="False" tags="" unique_id="73">
+				<rich_text>https://css-tricks.com/the-current-state-of-telephone-links/
+
+</rich_text>
+				<rich_text background="#1d1f21" foreground="#ab875d">&lt;</rich_text>
+				<rich_text background="#1d1f21">a </rich_text>
+				<rich_text background="#1d1f21" foreground="#ab875d">href=&quot;</rich_text>
+				<rich_text background="#1d1f21">tel:+01-562-867-5309</rich_text>
+				<rich_text background="#1d1f21" foreground="#ab875d">&quot;&gt;</rich_text>
+				<rich_text background="#1d1f21" foreground="#ffffff">1-562-867-5309</rich_text>
+				<rich_text background="#1d1f21" foreground="#ab875d">&lt;/</rich_text>
+				<rich_text background="#1d1f21">a</rich_text>
+				<rich_text background="#1d1f21" foreground="#ab875d">&gt;</rich_text>
+				<rich_text>
+
+</rich_text>
+				<rich_text background="#1d1f21" foreground="#dfc48c">a[href^=&quot;tel:&quot;]:before</rich_text>
+				<rich_text foreground="#dfc48c"> </rich_text>
+				<rich_text background="#1d1f21" foreground="#ffffff">{</rich_text>
+				<rich_text background="#1d1f21" foreground="#cd6a51">   </rich_text>
+				<rich_text background="#1d1f21" foreground="#9b869c">content</rich_text>
+				<rich_text background="#1d1f21" foreground="#ffffff">:</rich_text>
+				<rich_text background="#1d1f21" foreground="#cd6a51"> </rich_text>
+				<rich_text background="#1d1f21" foreground="#a67f59">&quot;\260e&quot;</rich_text>
+				<rich_text background="#1d1f21" foreground="#ffffff">;</rich_text>
+				<rich_text background="#1d1f21" foreground="#cd6a51">   </rich_text>
+				<rich_text background="#1d1f21" foreground="#9b869c">margin-right</rich_text>
+				<rich_text background="#1d1f21" foreground="#ffffff">:</rich_text>
+				<rich_text background="#1d1f21" foreground="#cd6a51"> </rich_text>
+				<rich_text background="#1d1f21" foreground="#9b869c">0.5</rich_text>
+				<rich_text background="#1d1f21" foreground="#cd6a51">em</rich_text>
+				<rich_text background="#1d1f21" foreground="#ffffff">;</rich_text>
+				<rich_text background="#1d1f21" foreground="#cd6a51"> </rich_text>
+				<rich_text background="#1d1f21" foreground="#ffffff">}</rich_text>
+				<rich_text>
+
+
+</rich_text>
+				<rich_text weight="heavy">callto:</rich_text>
+				<rich_text>   Exactly like tel: but used to initiate calls via the Skype app.
+
+</rich_text>
+				<rich_text weight="heavy">auto-detected:</rich_text>
+				<rich_text> Many browsers will automatically detect a phone number in the HTML and link it up for you—no need to change the markup. iOS, for example, will totally do this, though it did not seem to be the case for Chrome on Android.
+
+</rich_text>
+				<rich_text weight="heavy">sms:</rich_text>
+				<rich_text> Skip the call and go straight to text message. This seems to be a lot less supported than tel: is among browsers, including mobile.
+
+</rich_text>
+				<rich_text weight="heavy">fax:</rich_text>
+				<rich_text> Go back to the future with fax machines. Again, spotty reliability.
+
+
+SEO
+</rich_text>
+				<rich_text background="#1d1f21" foreground="#ab875d">&lt;</rich_text>
+				<rich_text background="#1d1f21">div </rich_text>
+				<rich_text background="#1d1f21" foreground="#ab875d">itemscope</rich_text>
+				<rich_text background="#1d1f21"> </rich_text>
+				<rich_text background="#1d1f21" foreground="#ab875d">itemtype=&quot;</rich_text>
+				<rich_text background="#1d1f21">http://schema.org/LocalBusiness</rich_text>
+				<rich_text background="#1d1f21" foreground="#ab875d">&quot;&gt;</rich_text>
+				<rich_text background="#1d1f21" foreground="#ffffff">   </rich_text>
+				<rich_text background="#1d1f21">
+    </rich_text>
+				<rich_text background="#1d1f21" foreground="#ab875d">&lt;</rich_text>
+				<rich_text background="#1d1f21">h1 </rich_text>
+				<rich_text background="#1d1f21" foreground="#ab875d">itemprop=&quot;</rich_text>
+				<rich_text background="#1d1f21">name</rich_text>
+				<rich_text background="#1d1f21" foreground="#ab875d">&quot;&gt;</rich_text>
+				<rich_text background="#1d1f21" foreground="#ffffff">Beach Bunny Swimwear</rich_text>
+				<rich_text background="#1d1f21" foreground="#ab875d">&lt;/</rich_text>
+				<rich_text background="#1d1f21">h1</rich_text>
+				<rich_text background="#1d1f21" foreground="#ab875d">&gt;</rich_text>
+				<rich_text background="#1d1f21" foreground="#ffffff">  
+         Phone:    
+         </rich_text>
+				<rich_text background="#1d1f21" foreground="#ab875d">&lt;</rich_text>
+				<rich_text background="#1d1f21">span </rich_text>
+				<rich_text background="#1d1f21" foreground="#ab875d">itemprop=&quot;</rich_text>
+				<rich_text background="#1d1f21">telephone</rich_text>
+				<rich_text background="#1d1f21" foreground="#ab875d">&quot;&gt;</rich_text>
+				<rich_text background="#1d1f21" foreground="#ffffff">      </rich_text>
+				<rich_text background="#1d1f21">
+         </rich_text>
+				<rich_text background="#1d1f21" foreground="#ab875d">&lt;</rich_text>
+				<rich_text background="#1d1f21">a </rich_text>
+				<rich_text background="#1d1f21" foreground="#ab875d">href=&quot;</rich_text>
+				<rich_text background="#1d1f21">tel:+18506484200</rich_text>
+				<rich_text background="#1d1f21" foreground="#ab875d">&quot;&gt;</rich_text>
+				<rich_text background="#1d1f21" foreground="#ffffff">          850-648-4200       </rich_text>
+				<rich_text background="#1d1f21" foreground="#ab875d">&lt;/</rich_text>
+				<rich_text background="#1d1f21">a</rich_text>
+				<rich_text background="#1d1f21" foreground="#ab875d">&gt;</rich_text>
+				<rich_text background="#1d1f21" foreground="#ffffff">    
+  </rich_text>
+				<rich_text background="#1d1f21">     </rich_text>
+				<rich_text background="#1d1f21" foreground="#ab875d">&lt;/</rich_text>
+				<rich_text background="#1d1f21">span</rich_text>
+				<rich_text background="#1d1f21" foreground="#ab875d">&gt;</rich_text>
+				<rich_text background="#1d1f21" foreground="#ffffff"> </rich_text>
+				<rich_text background="#1d1f21">
+ </rich_text>
+				<rich_text background="#1d1f21" foreground="#ab875d">&lt;/</rich_text>
+				<rich_text background="#1d1f21">div</rich_text>
+				<rich_text background="#1d1f21" foreground="#ab875d">&gt;</rich_text>
+			</node>
+			<node custom_icon_id="0" foreground="" is_bold="False" name="grid" prog_lang="custom-colors" readonly="False" tags="" unique_id="95">
+				<rich_text scale="h2">﻿.grid {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.grid &gt; * {
+  flex-basis: 10em;
+  flex-grow: 1;
+}</rich_text>
+				<rich_text>
+
+﻿
+</rich_text>
+				<rich_text scale="h2">Теперь все будет растягиваться до примерно 10em в ширину. 
+Количество  колонок зависит от того, сколько ячеек размером примерно 10em поместится  в viewport.</rich_text>
+				<rich_text>
+</rich_text>
+			</node>
+			<node custom_icon_id="0" foreground="" is_bold="False" name="lib plugins" prog_lang="custom-colors" readonly="False" tags="" unique_id="101">
+				<rich_text link="webs https://habrahabr.ru/post/309430/">https://habrahabr.ru/post/309430/</rich_text>
+			</node>
+			<node custom_icon_id="0" foreground="" is_bold="False" name="template for project" prog_lang="custom-colors" readonly="False" tags="" unique_id="103">
+				<rich_text background="#ffffff" foreground="#333333">1. Скачать чистый шаблон - </rich_text>
+				<rich_text link="webs https://yadi.sk/d/2rJ3SAAapvNmR">https://yadi.sk/d/2rJ3SAAapvNmR</rich_text>
+				<rich_text>
+</rich_text>
+				<rich_text background="#ffffff" foreground="#333333">2. Генератор шаблонов - </rich_text>
+				<rich_text link="webs http://sanusart.github.io/html-now/">http://sanusart.github.io/html-now/</rich_text>
+				<rich_text>
+</rich_text>
+				<rich_text background="#ffffff" foreground="#333333">3. Библиотека миксинов - </rich_text>
+				<rich_text link="webs http://bourbon.io/">http://bourbon.io/</rich_text>
+				<rich_text>
+</rich_text>
+				<rich_text background="#ffffff" foreground="#333333">4. Иконочный шрифт - </rich_text>
+				<rich_text link="webs http://fontawesome.io/icons/">http://fontawesome.io/icons/</rich_text>
+				<rich_text>
+</rich_text>
+				<rich_text background="#ffffff" foreground="#333333">5. Бесплатный компилятор - </rich_text>
+				<rich_text link="webs http://koala-app.com/">http://koala-app.com/</rich_text>
+				<rich_text background="#ffffff" foreground="#333333"> </rich_text>
+				<rich_text>
+</rich_text>
+				<rich_text background="#ffffff" foreground="#333333">1. Скачать шаблон - </rich_text>
+				<rich_text link="webs https://yadi.sk/d/r16gC6fFq4H4j">https://yadi.sk/d/r16gC6fFq4H4j</rich_text>
+				<rich_text>
+</rich_text>
+				<rich_text background="#ffffff" foreground="#333333">2. Официальный сайт gulp - </rich_text>
+				<rich_text link="webs http://gulpjs.com/">http://gulpjs.com/</rich_text>
+				<rich_text>
+</rich_text>
+				<rich_text background="#ffffff" foreground="#333333">3. Node.js - </rich_text>
+				<rich_text link="webs https://nodejs.org/en/">https://nodejs.org/en/</rich_text>
+			</node>
+		</node>
+		<node custom_icon_id="0" foreground="" is_bold="False" name="site testing" prog_lang="custom-colors" readonly="False" tags="" unique_id="67">
+			<rich_text>https://observatory.mozilla.org/  тестирование сайта на безопасность</rich_text>
+		</node>
+		<node custom_icon_id="0" foreground="" is_bold="False" name="bootstrap" prog_lang="custom-colors" readonly="False" tags="" unique_id="36">
+			<rich_text>Скачиваем/подключаем.
+Копируем код html для элементов.
+Лишнее - удаляем.
+Недостающее - допишем.
+Похожее - переопределим.
+
+Адаптивность:
+Ctrl+Shift+M   FireFox
+
+icon-font - не отображается!!! 
+svg!!!
+
+размеры по умолчанию смотрим в размерах блоков
+
+выравнивание слева и справа через классы 
+“pool-left” “pool-right”
+
+.container -  (fixed-width) 
+.container-fluid -  (full-width)
+
+.row
+.col-lg-2  (12/2=6)  6 элементов   в строке 
+.col-md-3  (12/4=3)  4 элемента   в строке 
+.col-sm-6  (12/6=2)  2 элемента   в строке 
+.col-xs-12 (12/12=1) 1 элемент в строке
+ 
+&lt;div class=&quot;row&quot;&gt;
+    &lt;div class=&quot;row0-wrapper clearfix&quot;&gt;
+        &lt;div class=&quot;col-md-3&quot;&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;col-md-3&quot;&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;col-md-3&quot;&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;col-md-3&quot;&gt;
+         &lt;/div&gt;
+    &lt;/div&gt;изменить размер изображения касанием
+&lt;/div&gt;
+
+
+
+</rich_text>
+			<node custom_icon_id="0" foreground="" is_bold="False" name="link" prog_lang="custom-colors" readonly="False" tags="" unique_id="102">
+				<rich_text link="webs http://mybootstrap.ru/extend/">http://mybootstrap.ru/extend/</rich_text>
+			</node>
+		</node>
+		<node custom_icon_id="0" foreground="" is_bold="False" name="nodejs" prog_lang="custom-colors" readonly="False" tags="" unique_id="68">
+			<rich_text>https://nodejs.org/en/download/package-manager/
+
+﻿
+</rich_text>
+			<rich_text scale="h2">Debian and Ubuntu based Linux distributions</rich_text>
+			<rich_text>:
+﻿# Using Ubuntu
+curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
+sudo apt-get install -y nodejs
+
+﻿To compile and install native addons from npm you may also need to install build tools:
+﻿sudo apt-get install -y build-essential
+
+
+/ --------------------- /
+Запустить сервер:
+node 
+
+Выйти их сервера:
+Ctrl+C       // 2 раза!
+
+
+Выполнить операцию:
+&gt;2+4
+4
+Вызвать файл:
+node script.js</rich_text>
+			<node custom_icon_id="0" foreground="" is_bold="False" name="npm" prog_lang="custom-colors" readonly="False" tags="" unique_id="2">
+				<rich_text scale="h1">﻿
+Updating npm
+</rich_text>
+				<rich_text scale="h2">﻿npm install npm -g</rich_text>
+				<rich_text>
+
+
+</rich_text>
+				<rich_text scale="h1">﻿
+Fixing npm permissions
+</rich_text>
+				<rich_text>﻿You can fix this problem using one of three options:
+1. Change the permission to npm's default directory.
+2. Change npm's default directory to another directory.
+3. Install node with a package manager that takes care of this for you.
+</rich_text>
+				<rich_text link="webs https://docs.npmjs.com/getting-started/fixing-npm-permissions">https://docs.npmjs.com/getting-started/fixing-npm-permissions</rich_text>
+				<rich_text>
+</rich_text>
+				<rich_text scale="h2">﻿
+Option 1: Change the permission to npm's default directory
+</rich_text>
+				<rich_text>1.﻿Find the path to npm's directory:
+﻿ npm config get prefix
+
+2.﻿Change the owner of npm's directories to the name of the current user (your username!):
+﻿sudo chown -R $(whoami) $(npm config get prefix)/{lib/node_modules,bin,share}
+
+﻿
+</rich_text>
+				<rich_text scale="h2">Option 2: Change npm's default directory to another directory</rich_text>
+				<rich_text scale="h1">
+</rich_text>
+				<rich_text>﻿mkdir ~/.npm-global
+﻿ npm config set prefix '~/.npm-global'
+OPEN FILE(﻿pluma .profile) AND ADD ﻿ export PATH=~/.npm-global/bin:$PATH
+﻿source ~/.profile
+﻿npm install -g jshint  // БЕЗ SUDO !!!</rich_text>
+				<node custom_icon_id="0" foreground="" is_bold="False" name="grunt" prog_lang="custom-colors" readonly="False" tags="" unique_id="3">
+					<rich_text>npm init                           // в папке проекта
+                                       // package.json   node_moduls
+echo &gt; gruntfile.js          // create file
+npm i grunt --save-dev  // install grunt
+
+npm i grunt-contrib-concat --save-dev
+npm i grunt-contrib-uglify --save-dev
+npm i grunt-contrib-watch --save-dev
+npm i grunt-contrib-sass --save-dev  // RUBY или искать sass на C</rich_text>
+				</node>
+				<node custom_icon_id="0" foreground="" is_bold="False" name="babel + grunt" prog_lang="custom-colors" readonly="False" tags="" unique_id="4">
+					<rich_text>npm i --save-dev grunt-babel babel-preset-es2015
+npm i --save-dev load-grunt-tasks
+
+gruntfile.js // text:
+module.exports = function(grunt) {
+	require('load-grunt-tasks')(grunt);
+	
+	grunt.initConfig({
+		bablel: {
+			options: {
+				sourceMap: false,
+				presets: ['es2015']
+			},
+			dist: {
+				files: [{
+					expand: true,
+					cwd: 'js/src',
+					src: ['*js'],
+					dest: 'js/dist',
+					ext: '.js',
+					extDot: 'first'
+				}]
+			}
+		},
+		watch: {
+			babel: {
+				files: 'js/src/*.js',
+				tasks: ['babel']
+			},
+		}
+	});
+	
+	grunt.loadNpmTasks('grunt-contrib-watch');
+	grunt.registerTask('default', ['babel']);</rich_text>
+				</node>
+				<node custom_icon_id="0" foreground="" is_bold="False" name="gulp" prog_lang="custom-colors" readonly="False" tags="" unique_id="69">
+					<rich_text>﻿
+</rich_text>
+					<rich_text scale="h2">Install Gulp Globally</rich_text>
+					<rich_text>
+﻿npm install --global gulp-cli
+
+﻿
+</rich_text>
+					<rich_text scale="h2">Install Node and Gulp Locally</rich_text>
+					<rich_text>
+// go to locally destination 
+﻿cd sites
+﻿mkdir startgulp
+﻿cd startgulp
+
+// install gulp locally
+﻿npm init                               // it will create ﻿package.json
+﻿npm install --save-dev gulp   // ﻿You’ll get a few warnings about deprecations and missing files, but don’t worry too much.
+
+// install gulp plugins
+﻿npm install --save-dev gulp-sass gulp-cssnano gulp-sourcemaps gulp-autoprefixer
+
+
+</rich_text>
+					<rich_text scale="h2">﻿Create a gulpfile.js.</rich_text>
+					<rich_text>
+echo ﻿'&quot;use strict&quot;;' &gt;&gt; gulpfile.js
+mkdir dist
+mkdir src
+
+// gulpfile.js
+﻿'use strict';
+
+// add to  gulpfile.js
+var gulp = require('gulp');
+var sass = require('gulp-sass');
+var cssnano = require('gulp-cssnano');
+var sourcemaps = require('gulp-sourcemaps');
+var autoprefixer = require('gulp-autoprefixer');
+
+var source = './src/sass/**/*.scss';
+var destination = './dist/css/';
+
+﻿gulp.task('workflow', function () {
+  gulp.src(source)
+        ﻿.pipe(sourcemaps.init())
+        .pipe(sass().on('error', sass.logError))
+        .pipe(autoprefixer({
+         browsers: ['last 2 versions'],
+         cascade: false
+         }))
+        .pipe(cssnano())
+       .pipe(sourcemaps.write('./'))
+  .pipe(gulp.dest(destination))
+});
+
+﻿gulp.task('default', function () {
+  gulp.watch('./src/sass/**/*.scss', ['workflow']);
+});</rich_text>
+					<node custom_icon_id="0" foreground="" is_bold="False" name="html" prog_lang="custom-colors" readonly="False" tags="" unique_id="70">
+						<rich_text>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;title&gt;Document&lt;/title&gt;
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;dist/css/style.css&quot;&gt;
+  &lt;script type=&quot;text/javascript&quot; src=&quot;dist/js/main.js&quot;&gt;
+
+  &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</rich_text>
+					</node>
+				</node>
+				<node custom_icon_id="0" foreground="" is_bold="False" name="yeoman" prog_lang="custom-colors" readonly="False" tags="" unique_id="71">
+					<rich_text>﻿npm install -g generator-webapp
+// delete
+        ﻿npm uninstall -g generator- webapp
+        
+        
+// chose dir and
+﻿yo webapp
+
+        </rich_text>
+					<node custom_icon_id="0" foreground="" is_bold="False" name="bourbone" prog_lang="custom-colors" readonly="False" tags="" unique_id="72">
+						<rich_text>﻿bower install --save bourbon
+bower install --save neat</rich_text>
+					</node>
+				</node>
+			</node>
+		</node>
+		<node custom_icon_id="0" foreground="" is_bold="False" name="LESS" prog_lang="custom-colors" readonly="False" tags="" unique_id="75">
+			<rich_text background="#00001b1b3333" foreground="#ffffffffffff" link="webs http://lesscss.org/" scale="h1">http://lesscss.org/</rich_text>
+			<rich_text>
+
+
+</rich_text>
+			<rich_text scale="h1" underline="single">http://pactpub.com</rich_text>
+			<rich_text>  Book Shop
+</rich_text>
+			<rich_text scale="h2">• Instant LESS CSS Preprocessor How-to
+• Less Web Development Essentials
+• 
+
+</rich_text>
+			<rich_text>
+
+@import ‘reset.less’;</rich_text>
+			<node custom_icon_id="0" foreground="" is_bold="False" name="variable" prog_lang="custom-colors" readonly="False" tags="" unique_id="78">
+				<rich_text scale="h2">@</rich_text>
+				<rich_text> 
+
+1) @ - символ, объявляющий переменную 
+Valid vsriable:
+@red
+@red1
+@red_1
+@red_1-color
+
+2) Colon “:” - разделяют имя и значение
+@col_base: #333333;
+color: @col_base;
+
+
+3)Can be use for:
+Colors
+Font-Weights    // @font_norm: 400; 
+Font-Size
+
+</rich_text>
+				<rich_text scale="h2">STRING AS VARIABLES</rich_text>
+				<rich_text>
+
+@font-sans: ‘open sans’, sans-serif;
+font-family: @font_norm 14px/20px @font-sans;
+
+@img_path: “../img”;
+
+</rich_text>
+				<rich_text scale="h2">{}</rich_text>
+				<rich_text>
+
+background-image: url('@{img_path}/icons/logo.svg');</rich_text>
+			</node>
+			<node custom_icon_id="0" foreground="" is_bold="False" name="mixin" prog_lang="custom-colors" readonly="False" tags="" unique_id="80">
+				<rich_text scale="h2">Sintax:</rich_text>
+				<rich_text>
+
+Ccreate mixin:
+.round_corners {
+    -webkit-border-radius: 50px;
+    - moz-border-radius: 50px;
+    border-radius: 50px;
+}
+
+
+Insert mixin :
+.round_corners();
+
+</rich_text>
+				<rich_text scale="h2">Parametric Mixins</rich_text>
+				<rich_text>
+
+Ccreate mixin:
+.round_corners (@params: 50px) {
+    -webkit-border-radius: @params;
+    - moz-border-radius: @params;
+    border-radius: @params;
+}
+
+
+Insert mixin :
+.round_corners(24px);
+</rich_text>
+			</node>
+			<node custom_icon_id="0" foreground="" is_bold="False" name="nesting" prog_lang="custom-colors" readonly="False" tags="" unique_id="81">
+				<rich_text scale="h2">NonDescendas</rich_text>
+				<rich_text>
+    div.chocolate
+
+
+</rich_text>
+				<rich_text scale="h2">Descendas</rich_text>
+				<rich_text>
+    div .chokolate
+
+
+</rich_text>
+				<rich_text scale="h2">&amp;</rich_text>
+				<rich_text>  // Use ‘&amp;’ as an instruction to not include a space
+
+a {
+    &amp;:hover {
+        color: red;
+    }
+}
+
+Compiles to: 
+
+a:hover {
+    color:red
+}
+
+</rich_text>
+			</node>
+			<node custom_icon_id="0" foreground="" is_bold="False" name="operations" prog_lang="custom-colors" readonly="False" tags="" unique_id="82">
+				<rich_text>
+</rich_text>
+				<rich_text scale="h3">Add          (+ )
+Subtract   ( - )
+Multiply    ( * )
+Divide      ( / )</rich_text>
+				<rich_text>
+
+</rich_text>
+				<rich_text scale="h1">Only fist unit type ( px/em) is used</rich_text>
+				<rich_text>
+
+@base_size: 10px;
+
+font-size: @base_size + 12;  //  рамерность определяется в переменной
+
+
+</rich_text>
+				<rich_text scale="h1">Color Operation</rich_text>
+				<rich_text>
+
+</rich_text>
+				<rich_text scale="h2">All color formats are supported:</rich_text>
+				<rich_text>
+</rich_text>
+				<rich_text scale="h3">• rgb(100, 100, 100)    and    rgba(100, 100, 100, 0.5)
+• hsl(20%, 20%, 20%)   and   hsla(20%, 20%, 20%, 0.5)
+• Hex: #ececec
+• Named: red
+
+When addding Hex to an Alpha supporting format, transparensy will be lost</rich_text>
+			</node>
+			<node custom_icon_id="0" foreground="" is_bold="False" name="function" prog_lang="custom-colors" readonly="False" tags="" unique_id="83">
+				<rich_text>http://lesscss.org/functions/#color-operations-saturate
+
+</rich_text>
+				<rich_text scale="h2">• Lighten and Darken</rich_text>
+				<rich_text>
+</rich_text>
+				<rich_text scale="h3">   ◇ lighten(#000, 20%) | darken(#fff, 20%)</rich_text>
+				<rich_text>
+      lighten - Increase the lightness of a color in the HSL color space by an absolute amount.
+      Example: lighten(hsl(90, 80%, 50%), 20%) =&gt; hsl(90, 80%, 70%)
+
+
+</rich_text>
+				<rich_text scale="h2">• Saturate and Desaturate</rich_text>
+				<rich_text>
+   ◇ saturate(#ccc, 20%) | desaturate(#eee, 50%)
+      saturate - increase the saturation of a color in the HSL color space by an absolute amount.
+    
+      Example: saturate(hsl(90, 80%, 50%), 20%) =&gt;  hsl(90, 100%, 50%)
+
+    
+
+</rich_text>
+				<rich_text scale="h2">• Fade, FadeIn ( +)  and FadeOut ( - )</rich_text>
+				<rich_text> //Добавляет (если не было) и изменяет прозрачность
+   ◇ fade(@col, 10%) | fadeIn(@col, 10%) | fadeout (@col, 50%)
+   fadin - Decrease the transparency (or increase the opacity) of a color, making it more opaque.
+    Example: fadein(hsla(90, 90%, 50%, 0.5), 10%) =&gt; hsla(90, 90%, 50%, 0.6)
+   
+    fadout - Increase the transparency (or decrease the opacity) of a color, making it less opaque. 
+    Example: fadeout(hsla(90, 90%, 50%, 0.5), 10%) =&gt; hsla(90, 90%, 50%, 0.4)
+    
+    fade - Set the absolute transparency of a color. Can be applied to colors whether they already have an opacity value or not.
+    Example: fade(hsl(90, 90%, 50%), 10%) =&gt; hsla(90, 90%, 50%, 0.1)
+
+
+
+</rich_text>
+				<rich_text scale="h2">• Spin</rich_text>
+				<rich_text> (0 - 360 изменяет угол цветового колеса)
+   ◇ spin(red, -10) | spin(green, 10)
+
+
+</rich_text>
+				<rich_text scale="h2">• Mix</rich_text>
+				<rich_text> Mix two colors together in variable proportion. Opacity is included in the calculations.
+   ◇ mix(red, @col)</rich_text>
+			</node>
+			<node custom_icon_id="0" foreground="" is_bold="False" name="math function" prog_lang="custom-colors" readonly="False" tags="" unique_id="84">
+				<rich_text scale="h2">Round</rich_text>
+				<rich_text>
+round(1.67) =&gt; 2
+round(1.67, 1) =&gt; 1.7
+
+
+</rich_text>
+				<rich_text scale="h2">Ceil </rich_text>
+				<rich_text>Rounds up to the next highest integer. Returns: integer
+ceil(2.4em) =&gt; 3em
+
+</rich_text>
+				<rich_text scale="h2">Flour</rich_text>
+				<rich_text> Rounds down to the next lowest integer. Returns: integer
+flour(2.6px) =&gt; 2px
+
+</rich_text>
+				<rich_text scale="h2">Percentage</rich_text>
+				<rich_text> Converts a floating point number into a percentage string. Returns: string
+percentage(0.3) =&gt; 30%
+</rich_text>
+			</node>
+			<node custom_icon_id="0" foreground="" is_bold="False" name="frameworks and template" prog_lang="custom-colors" readonly="False" tags="" unique_id="85">
+				<rich_text scale="h1">Bootstrap   </rich_text>
+				<rich_text scale="h1" underline="single">getbootstrap.com/gettibg-started/#download</rich_text>
+				<rich_text>
+
+</rich_text>
+				<rich_text scale="h1">Frameless   </rich_text>
+				<rich_text scale="h1" underline="single">framelessgrid.com</rich_text>
+				<rich_text>
+
+</rich_text>
+				<rich_text scale="h1">Responsible  </rich_text>
+				<rich_text scale="h1" underline="single">responsablecss.com</rich_text>
+				<rich_text>
+
+</rich_text>
+				<rich_text scale="h1">Semantic  </rich_text>
+				<rich_text scale="h1" underline="single">semantic.gs</rich_text>
+				<rich_text>
+
+</rich_text>
+			</node>
+			<node custom_icon_id="0" foreground="" is_bold="False" name="page_example" prog_lang="custom-colors" readonly="False" tags="" unique_id="79">
+				<rich_text>/*************************************************************************************************/
+/*LESS Variables*/
+/*************************************************************************************************/
+
+//Main Colours
+
+//Additional Colours
+
+//Font Weights
+
+
+/*************************************************************************************************/
+/*LESS Mixins*/
+/*************************************************************************************************/
+
+
+/*************************************************************************************************/
+/*CSS Animation*/
+/*************************************************************************************************/
+
+
+/*************************************************************************************************/
+/*Global Styles*/
+/*************************************************************************************************/
+
+/*Heading*/
+
+/*************************************************************************************************/
+/*Header*/
+/*************************************************************************************************/
+
+/*************************************************************************************************/
+/*User panel*/
+/*************************************************************************************************/</rich_text>
+			</node>
+			<node custom_icon_id="0" foreground="" is_bold="False" name="Magento2" prog_lang="custom-colors" readonly="False" tags="" unique_id="91">
+				<rich_text link="webs http://blog.belvg.com/less-in-magento-2-0.html" scale="h1">http://blog.belvg.com/less-in-magento-2-0.html</rich_text>
+				<rich_text>
+
+lib/web/css
+
+lib/web/css/docs  // docs  for library
+
+lib/web/css/source/lib/variables  // predifined variables for each mixin
+
+lib/web/css/source/lib   // mixin
+
+
+Для импорта этих файлов используем @import:
+@import ‘_buttons.less';   // for example
+
+Import Magento UI library:
+@import ‘source/lib/_lib.less’;             // Global lib
+@import ‘source/_source.less’;            //  Theme style
+@import ‘source/_component.less’;     // Component style (modal / sliding panel)</rich_text>
+			</node>
+		</node>
+	</node>
+	<node custom_icon_id="0" foreground="" is_bold="False" name="JavaScript" prog_lang="custom-colors" readonly="False" tags="" unique_id="114">
+		<rich_text></rich_text>
+		<node custom_icon_id="0" foreground="" is_bold="False" name="es5" prog_lang="custom-colors" readonly="False" tags="" unique_id="38">
+			<rich_text></rich_text>
+			<node custom_icon_id="0" foreground="" is_bold="False" name="JSON" prog_lang="custom-colors" readonly="False" tags="" unique_id="56">
+				<rich_text>var createTestString = JSON.stringify(createTest);                             // объект перевели в JSON формат
+
+var createTest = JSON.parse( createTestString );                                // JSON  перевели в объект
+</rich_text>
+			</node>
+			<node custom_icon_id="0" foreground="" is_bold="False" name="localeStorage" prog_lang="custom-colors" readonly="False" tags="" unique_id="57">
+				<rich_text>localStorage.setItem('createTest', createTestString);
+
+localStorage.getItem('createTest');
+
+window.localStorage.clear();</rich_text>
+			</node>
+			<node custom_icon_id="0" foreground="" is_bold="False" name="Pattern" prog_lang="custom-colors" readonly="False" tags="" unique_id="107">
+				<rich_text scale="h2">﻿
+• шаблоны – это проверенное решения проблем разработки программного обеспечения
+• шаблоны являются масштабируемыми, поскольку они обычно структурированы и имеют правила, которых вы должны придерживаться
+• шаблоны могут быть повторно использованы для аналогичных задач
+</rich_text>
+				<rich_text>
+</rich_text>
+				<node custom_icon_id="0" foreground="" is_bold="False" name="creational patterns" prog_lang="custom-colors" readonly="False" tags="" unique_id="108">
+					<rich_text scale="h2">﻿Порождающие шаблоны (creational patterns) сосредоточены на способах создания объектов или классов. 
+Это может показаться простым (и это в некоторых случаях оно так и есть), 
+но большие приложения должны контролировать процесс создания объекта.
+
+</rich_text>
+					<node custom_icon_id="0" foreground="" is_bold="False" name="метод, общий для всех экземпляров" prog_lang="custom-colors" readonly="False" tags="" unique_id="111">
+						<rich_text scale="h2">﻿function Person(config) {  
+    this.name = config.name;  
+    this.age = config.age;  
+}  
+
+Person.prototype.getAge = function() {    //﻿ метод будет разделен всеми экземплярами 
+    return this.age;                                        // ﻿ любой тип данных, который наследует от Person, будет иметь доступ к методу
+};  
+
+var tilo = new Person({name:&quot;Tilo&quot;, age:23 });  
+console.log(tilo.getAge());</rich_text>
+					</node>
+					<node custom_icon_id="0" foreground="" is_bold="False" name="конфиденциальность" prog_lang="custom-colors" readonly="False" tags="" unique_id="112">
+						<rich_text scale="h2">﻿var retinaMacbook = (function() {  
+
+    var RAM, addRAM;                                                   //Приватные переменные  
+
+    RAM = 4;  
+
+    addRAM = function (additionalRAM) {                 //Приватные методы 
+        RAM += additionalRAM;  
+    };  
+
+    return {  
+
+        USB: undefined,                                                         //Публичные переменные и методы 
+        insertUSB: function (device) {  
+            this.USB = device;  
+        },  
+
+        removeUSB: function () {  
+            var device = this.USB;  
+            this.USB = undefined;  
+            return device;  
+        }  
+    };  
+})();</rich_text>
+						<rich_text>
+
+/* ---------------------------- CONSOLE ---------------------------------------------------*/
+﻿
+retinaMacbook.insertUSB(&quot;myUSB&quot;);  
+console.log(retinaMacbook.USB); //logs out &quot;myUSB&quot;  
+console.log(retinaMacbook.RAM) //logs out undefined</rich_text>
+					</node>
+				</node>
+				<node custom_icon_id="0" foreground="" is_bold="False" name="structural design patterns" prog_lang="custom-colors" readonly="False" tags="" unique_id="109">
+					<rich_text scale="h2">﻿Структурные шаблоны (structural design patterns) сосредоточены на том, чтобы управлять отношениями между объектами так, чтобы ваше приложение было построено масштабируемым способом. Ключевым аспектом структурной модели является обеспечение того, что изменение в одной части приложения не влияет на все другие части.
+</rich_text>
+				</node>
+				<node custom_icon_id="0" foreground="" is_bold="False" name="behavioral patterns" prog_lang="custom-colors" readonly="False" tags="" unique_id="110">
+					<rich_text scale="h2">﻿Поведенческие шаблоны (behavioral patterns) сосредоточены на связи между объектами
+
+</rich_text>
+				</node>
+			</node>
+			<node custom_icon_id="0" foreground="" is_bold="False" name="Random" prog_lang="custom-colors" readonly="False" tags="" unique_id="113">
+				<rich_text>Диапазон целых случайных чисел от 0 до 4:
+
+Math.floor(Math.random()*5);  // 
+
+Math.floor() - отсекает дробную часть.
+
+Для диапазона от нуля до N:
+Math.random()*(N+1)</rich_text>
+			</node>
+		</node>
+		<node custom_icon_id="0" foreground="" is_bold="False" name="es6" prog_lang="custom-colors" readonly="False" tags="" unique_id="28">
+			<rich_text>http://www.ecma-international.org/ecma-262/6.0/#sec-declarations-and-the-variable-statement
+
+http://learn.javascript.ru/es-modern
+
+http://www.htmlgoodies.com/primers/jsp/
+
+https://www.youtube.com/watch?v=x4SFjShP9vA&amp;feature=em-subs_digest-vrecs
+</rich_text>
+			<node custom_icon_id="0" foreground="" is_bold="False" name="=&gt;" prog_lang="custom-colors" readonly="False" tags="" unique_id="29">
+				<rich_text>let sum = (a, b) =&gt; a+b;</rich_text>
+			</node>
+			<node custom_icon_id="0" foreground="" is_bold="False" name="iterator" prog_lang="custom-colors" readonly="False" tags="" unique_id="30">
+				<rich_text>iterator: for(let value of arr)</rich_text>
+			</node>
+			<node custom_icon_id="0" foreground="" is_bold="False" name="descriptor" prog_lang="custom-colors" readonly="False" tags="" unique_id="31">
+				<rich_text>function foo (title=&quot;tempate@&quot;, i=100){}</rich_text>
+			</node>
+		</node>
+		<node custom_icon_id="0" foreground="" is_bold="False" name="RegExp class" prog_lang="custom-colors" readonly="False" tags="" unique_id="5">
+			<rich_text scale="h1">class: RegExp</rich_text>
+			<rich_text>
+
+</rich_text>
+			<rich_text scale="h3" weight="heavy">object RegExp, object String</rich_text>
+			<rich_text scale="h3"> - определяют </rich_text>
+			<rich_text scale="h3" style="italic">методы</rich_text>
+			<rich_text scale="h3"> 
+использования регулярных выражений для </rich_text>
+			<rich_text scale="h3" style="italic">поиска</rich_text>
+			<rich_text scale="h3"> и </rich_text>
+			<rich_text scale="h3" style="italic">замены</rich_text>
+			<rich_text scale="h3"> </rich_text>
+			<rich_text>
+
+ES5 - каждый литерал RegExp возвращает новый объект! // ES3 только один объкт
+
+</rich_text>
+			<rich_text scale="h2">1)Синтаксис литералов символы внутри пары символов слэша: </rich_text>
+			<rich_text>
+</rich_text>
+			<rich_text scale="h2">    var pattern = /example/; </rich_text>
+			<rich_text>
+// создается новый объект RegExp для переменной pattern
+
+</rich_text>
+			<rich_text scale="h2">2)Синтаксис литералов с помощью конструктора:</rich_text>
+			<rich_text>
+</rich_text>
+			<rich_text scale="h2">    var pattern = new RegExp(&quot;example&quot;); </rich_text>
+			<rich_text>
+    
+</rich_text>
+			<rich_text scale="h2">Символ и метасимвол: </rich_text>
+			<rich_text>
+ символ - буквальное соответствие символа шаблона искомому символу
+ метасивол - соответствие символа шаблона определенному свойству или набору символов
+ 
+ </rich_text>
+		</node>
+	</node>
+	<node custom_icon_id="0" foreground="" is_bold="False" name="CMS" prog_lang="custom-colors" readonly="False" tags="" unique_id="41">
+		<rich_text></rich_text>
+		<node custom_icon_id="0" foreground="" is_bold="False" name="Magento2" prog_lang="custom-colors" readonly="False" tags="" unique_id="42">
+			<rich_text background="#00001b1b3333" foreground="#ffffffffffff" link="webs http://devdocs.magento.com/guides/v2.0/frontend-dev-guide/themes/theme-create.html#prerequisites" scale="h2">http://devdocs.magento.com/guides/v2.0/frontend-dev-guide/themes/theme-create.html#prerequisites</rich_text>
+			<rich_text scale="h2">
+
+</rich_text>
+			<rich_text link="webs http://devdocs.magento.com/" scale="h2">http://devdocs.magento.com/</rich_text>
+			<rich_text scale="h2">
+
+</rich_text>
+			<rich_text link="webs https://github.com/SnowdogApps/magento2-frontools" scale="h2">https://github.com/SnowdogApps/magento2-frontools</rich_text>
+			<rich_text scale="h2">
+
+</rich_text>
+			<rich_text link="webs http://magento2demo.firebearstudio.com/" scale="h2">http://magento2demo.firebearstudio.com/</rich_text>
+			<rich_text scale="h2">
+
+</rich_text>
+			<rich_text link="webs https://www.integer-net.com/magento-2-frontend-workflow-step-by-step/" scale="h2">https://www.integer-net.com/magento-2-frontend-workflow-step-by-step/</rich_text>
+			<rich_text scale="h2">
+
+</rich_text>
+			<rich_text link="webs http://inchoo.net/magento-2/frontend-theme-architecture/" scale="h2">http://inchoo.net/magento-2/frontend-theme-architecture/</rich_text>
+			<rich_text scale="h2">
+
+</rich_text>
+			<rich_text link="webs https://www.ashsmith.io/magento2/module-from-scratch-part-4-the-frontend/" scale="h2">https://www.ashsmith.io/magento2/module-from-scratch-part-4-the-frontend/</rich_text>
+			<rich_text scale="h2">
+</rich_text>
+			<rich_text>
+
+</rich_text>
+			<rich_text scale="h1">INSTALL</rich_text>
+			<rich_text>
+</rich_text>
+			<rich_text link="webs https://gotechnies.com/install-magento2-ubuntu-lts-16-04/" scale="h2">https://gotechnies.com/install-magento2-ubuntu-lts-16-04/</rich_text>
+			<node custom_icon_id="0" foreground="" is_bold="False" name="new Theme  (2.0)" prog_lang="custom-colors" readonly="False" tags="" unique_id="74">
+				<rich_text scale="h1">план:</rich_text>
+				<rich_text>
+
+• Создание каталога темы и ее объявление
+• Создание пакета composer для темы (опционально). Пока этого делать мы не будем, но расскажем об этом.
+• Создание файла</rich_text>
+				<rich_text foreground="#5656b6b6c2c2"> registration.php</rich_text>
+				<rich_text>
+• Конфигурация изображений (каталог, страница продукта и пр.)
+• Интернационализация (переводы)
+• Создание каталогов для статичных файлов
+• Определение логотипа темы
+
+Вся наша тема (шаблоны, лэйауты, css, js) будет находиться в </rich_text>
+				<rich_text foreground="#5656b6b6c2c2" weight="heavy">app/design/frontend/</rich_text>
+				<rich_text>
+
+
+</rich_text>
+				<rich_text scale="h2">создание каталога темы</rich_text>
+				<rich_text>:
+sudo </rich_text>
+				<rich_text foreground="#5656b6b6c2c2">mkdir app/design/frontend/&lt;Vendor&gt;</rich_text>
+				<rich_text>  //желательно с большой буквы
+sudo </rich_text>
+				<rich_text foreground="#5656b6b6c2c2">mkdir app/design/frontend/&lt;Vendor&gt;</rich_text>
+				<rich_text> </rich_text>
+				<rich_text foreground="#5656b6b6c2c2">/&lt;theme&gt;</rich_text>
+				<rich_text>  //необходимо создать </rich_text>
+				<rich_text foreground="#5656b6b6c2c2">theme.xml</rich_text>
+				<rich_text>
+cd </rich_text>
+				<rich_text foreground="#5656b6b6c2c2">mkdir app/design/frontend/&lt;Vendor&gt;</rich_text>
+				<rich_text> </rich_text>
+				<rich_text foreground="#5656b6b6c2c2">/&lt;theme&gt;</rich_text>
+				<rich_text>
+sudo  </rich_text>
+				<rich_text foreground="#adadd8d8e6e6">touch </rich_text>
+				<rich_text foreground="#5656b6b6c2c2">theme.xml</rich_text>
+				<rich_text>  //необходимо создать </rich_text>
+				<rich_text foreground="#5656b6b6c2c2">theme.xml</rich_text>
+				<rich_text>
+// </rich_text>
+				<rich_text foreground="#5656b6b6c2c2">theme.xml</rich_text>
+				<rich_text>: </rich_text>
+				<rich_text foreground="#bfbfbfbfbfbf" scale="small">(имя  темы, родит-скую тему,  путь до изображения предварительного просмотра темы)</rich_text>
+				<rich_text>
+</rich_text>
+				<rich_text family="monospace" foreground="#ffffa5a50000" scale="small">&lt;theme xmlns:xsi=&quot;http: //www.w3.org/2001/XMLSchema-instance&quot; xsi:noNamespaceSchemaLocation=&quot;urn:magento:framework:Config/etc/theme.xsd&quot;&gt;    
+    &lt;title&gt;Vendor theme&lt;/title&gt; 
+    &lt;!-- theme name --&gt;    &lt;parent&gt;Magento/luma&lt;/parent&gt; &lt;!-- parent theme --&gt;    
+    &lt;media&gt;        
+        &lt;preview_image&gt;media/preview.jpg&lt;/preview_image&gt; &lt;!-- theme preview image --&gt;    
+    &lt;/media&gt;
+&lt;/theme&gt;</rich_text>
+				<rich_text>
+
+
+</rich_text>
+				<rich_text scale="h2">Создание пакета composer для темы (опционально)</rich_text>
+				<rich_text>.
+</rich_text>
+				<rich_text link="webs http://astrio.ru/blog/magento-2-theme-creation-ru/">http://astrio.ru/blog/magento-2-theme-creation-ru/</rich_text>
+				<rich_text>
+
+</rich_text>
+				<rich_text scale="h2">Создание файла registration.php</rich_text>
+				<rich_text>:
+ 
+</rich_text>
+				<rich_text family="monospace" foreground="#ffffa5a50000" scale="small">&lt;?php
+    use \Magento\Framework\Component\ComponentRegistrar;
+    ComponentRegistrar::register(ComponentRegistrar::THEME, 'frontend/E-Cigar/e-cigar_theme', __DIR__);
+?&gt;</rich_text>
+				<rich_text>
+
+
+</rich_text>
+				<rich_text scale="h2">Конфигурация изображений</rich_text>
+				<rich_text>:  //app/design/frontend/&lt;Vendor&gt; /&lt;theme&gt;/
+</rich_text>
+				<rich_text foreground="#adadd8d8e6e6">sudo mkdir etc
+sudo touch view.xml</rich_text>
+				<rich_text>
+</rich_text>
+				<rich_text scale="small">• width(int) – длина изображения
+• height(int) – высота изображения
+• constrain (boolean) – Если true, то изображения размерами меньше определенной конфигурации масштабироваться не будут. По умолчанию — true.
+• aspect_ratio(boolean) – Определяет, сохранять ли пропорции изображения. По умолчанию — true.
+• frame(boolean) – Определяет, обрезать ли изображения (работает при aspect_ratio – true). По умолчанию — true.
+• transparency(boolean) – Определяет прозрачность фона изображения. По умолчанию — true.
+• background(array) – Определяет цвет фона изображения. Не будет применяться к изображениям с прозрачностью, если параметр transparency – true</rich_text>
+				<rich_text>
+
+
+</rich_text>
+				<rich_text scale="h2">Интернационализация</rich_text>
+				<rich_text>: //app/design/frontend/&lt;Vendor&gt; /&lt;theme&gt;/
+</rich_text>
+				<rich_text foreground="#adadd8d8e6e6">sudo mkdir i18n</rich_text>
+				<rich_text>                 // i(18letters=&quot;nternationalizatio&quot;)n
+</rich_text>
+				<rich_text foreground="#adadd8d8e6e6">sudo touch ru_RU.csv en_US.csv</rich_text>
+				<rich_text>
+
+
+</rich_text>
+				<rich_text scale="h2">Создание каталогов для статичных файлов</rich_text>
+				<rich_text>: //app/design/frontend/&lt;Vendor&gt; /&lt;theme&gt;/
+</rich_text>
+				<rich_text foreground="#adadd8d8e6e6">sudo mkdir web
+cd web
+sudo mkdir images
+sudo mkdir js
+sudo mkdir css
+cd css
+sudo mkdir source
+/css/source web/fonts web/images web/js</rich_text>
+				<rich_text>
+
+
+</rich_text>
+				<rich_text scale="h2">Определение логотипа темы</rich_text>
+				<rich_text>:  </rich_text>
+				<rich_text foreground="#adadd8d8e6e6">&lt;theme_dir&gt;/web/images/logo.svg</rich_text>
+				<rich_text>
+ Если Ваш логотип в другом формате, необходимо его объявить:
+Для объявления логотипа необходимо добавить файл </rich_text>
+				<rich_text foreground="#adadd8d8e6e6">&lt;theme&gt;/Magento_Theme/layout/default.xml</rich_text>
+				<rich_text>
+</rich_text>
+				<rich_text foreground="#bfbfbfbfbfbf" scale="small">Например, логотип astrio.png размером 150x30 будет объявлен так:</rich_text>
+				<rich_text>
+</rich_text>
+				<rich_text foreground="#ffffa5a50000" scale="small">&lt;page xmlns:xsi=&quot;http: //www.w3.org/2001/XMLSchema-instance&quot; xsi:noNamespaceSchemaLocation=&quot;urn:magento:framework:View/Layout/etc/page_configuration.xsd&quot;&gt;    
+    &lt;body&gt;        
+        &lt;referenceBlock name=&quot;logo&quot;&gt;            
+            &lt;arguments&gt;
+            &lt;argument name=&quot;logo_file&quot; xsi:type=&quot;string&quot;&gt;images/astrio.png&lt;/argument&gt;                
+            &lt;argument name=&quot;logo_img_width&quot; xsi:type=&quot;number&quot;&gt;150&lt;/argument&gt;                 
+            &lt;argument name=&quot;logo_img_height&quot; xsi:type=&quot;number&quot;&gt;30&lt;/argument&gt;            
+            &lt;/arguments&gt;        
+        &lt;/referenceBlock&gt;    
+    &lt;/body&gt;&lt;
+/page&gt;</rich_text>
+				<rich_text>
+
+
+</rich_text>
+			</node>
+		</node>
+	</node>
+	<node custom_icon_id="0" foreground="" is_bold="False" name="PHP" prog_lang="custom-colors" readonly="False" tags="" unique_id="44">
+		<rich_text>http://php-start.com/
+
+https://www.youtube.com/user/TheLukesky1/playlists
+
+http://php720.com/how-to-start
+
+https://www.youtube.com/watch?v=qpL0HufcJKg&amp;list=PLY7PmJJFH5nSC4cuEqONXMYyVS9kV4Lp9</rich_text>
+		<node custom_icon_id="0" foreground="" is_bold="False" name="base" prog_lang="custom-colors" readonly="False" tags="" unique_id="45">
+			<rich_text></rich_text>
+			<node custom_icon_id="0" foreground="" is_bold="False" name="const" prog_lang="custom-colors" readonly="False" tags="" unique_id="46">
+				<rich_text>define(&quot;PI&quot;, 3.1415927);  // define();  UPPER CASE, не изменяется
+
+
+Предопределенные константы:
+
+• </rich_text>
+				<rich_text weight="heavy">_FILE_</rich_text>
+				<rich_text> содержит имя файла, включая полный путь, который в данный момент читает PHP
+
+• </rich_text>
+				<rich_text weight="heavy">_LINE_</rich_text>
+				<rich_text> содержит номер строки этого файла
+
+• </rich_text>
+				<rich_text weight="heavy">__DIR__</rich_text>
+				<rich_text> представляет только путь к файлу
+
+• </rich_text>
+				<rich_text weight="heavy">__CLASS__</rich_text>
+				<rich_text> представляет имя текущего класса
+
+• </rich_text>
+				<rich_text weight="heavy">__FUNCTION__</rich_text>
+				<rich_text> представляет имя текущей функции
+
+• </rich_text>
+				<rich_text weight="heavy">__METHOD__</rich_text>
+				<rich_text> представляет имя текущего метода
+
+• </rich_text>
+				<rich_text weight="heavy">__NAMESPACE__</rich_text>
+				<rich_text> представляет имя текущего пространства имен
+</rich_text>
+			</node>
+			<node custom_icon_id="0" foreground="" is_bold="False" name="variable" prog_lang="custom-colors" readonly="False" tags="" unique_id="47">
+				<rich_text>$_all_first;
+
+$all noEquial $All // registr
+
+8 type of data:
+
+0) integer
+1) boolean:  true , false
+2) double
+3) string
+4) object
+5) array
+6) resurs
+7) null
+
+isset($name_var);  //true если переменная объявлена даже без присвоения
+unset($a);              // delete $a
+
+gettype();
+
+settype($t, “string”); // settype(), $name, “type”
+
+//приведение типа - временная копия нового типа, не изменяя саму переменную
+$tmp = (double)$t;
+
+Переменные имена переменных:  // динамические переменные - имя такой переменной хранится  в ней самой
+
+$t = “All”; 
+$$t = “hellow!”;
+echo “$$t ”
+
+//Проверка переменных
+
+empty($name_var);  // “”, null, не объявлена
+
+isint($name_var);
+is_array();
+is_float();
+is_null();
+is_numeric();
+is_string();</rich_text>
+				<node custom_icon_id="0" foreground="" is_bold="False" name="link" prog_lang="custom-colors" readonly="False" tags="" unique_id="48">
+					<rich_text>hard link
+
+$a = &amp;$b;   // &amp;
+
+
+soft link 
+
+$b = 100;
+$soft_link = “b”;
+
+$$soft_link;  //$$</rich_text>
+				</node>
+			</node>
+			<node custom_icon_id="0" foreground="" is_bold="False" name="operator" prog_lang="custom-colors" readonly="False" tags="" unique_id="49">
+				<rich_text>$a = “all”;
+$b = $a.&quot; , hellow!&quot;;   // конкатенация через .
+
+.=  // конкатенация через .
+
+=== // равенство значений и типов
+==    // равенство значений
+!=   &lt;&gt;  //не равно
+
+!===  // не идентичны значения и типы</rich_text>
+			</node>
+			<node custom_icon_id="0" foreground="" is_bold="False" name="условные операторы" prog_lang="custom-colors" readonly="False" tags="" unique_id="50">
+				<rich_text>if ($a &gt; $b) {$a + $b;}
+
+if ($a &gt; $b) :  $a + $b;   endif;
+
+if ($a &gt; $b) {$a + $b}  else {$a - $b};
+
+if ($a &gt; $b) :  $a + $b;  else: $a -$b; endif;
+
+if ($a &gt; $b) {$a + $b}  elseif ($a == $b) {$a * 2} else {$a - $b};
+
+if ($a &gt; $b) :  $a + $b;  elseif ($a == $b): $a * 2; else: $a -$b; endif;
+
+тернарный оператор:
+text = ($a == $b) ? &quot;А равно Б&quot; : &quot;А не равно Б&quot;;
+echo $text;
+
+// switch
+
+switch ( $a )
+  {
+  case 1:
+	echo &quot;А равно 1&quot;;
+	break;
+  case 2:
+	echo &quot;А равно 2&quot;;
+	break;
+  case 3:
+	echo &quot;А равно 3&quot;;
+	break;
+  default:
+	echo &quot;А не равно ни 1, ни 2, ни 3&quot;;
+  }
+  
+  or { change to : and endswitch;
+  
+  </rich_text>
+			</node>
+			<node custom_icon_id="0" foreground="" is_bold="False" name="strinf function" prog_lang="custom-colors" readonly="False" tags="" unique_id="51">
+				<rich_text></rich_text>
+				<node custom_icon_id="0" foreground="" is_bold="False" name="htmlspecialchars();" prog_lang="custom-colors" readonly="False" tags="" unique_id="52">
+					<rich_text></rich_text>
+				</node>
+			</node>
+			<node custom_icon_id="0" foreground="" is_bold="False" name="цикл" prog_lang="custom-colors" readonly="False" tags="" unique_id="53">
+				<rich_text>// for
+for ($a = 11; $a &lt;= 19; $a++):
+   echo &quot;квадрат $a равен &quot;.($a*$a).&quot;&lt;br&gt;&quot;;
+endfor;
+
+for ($a = 11; $a &lt;= 19; $a++) {
+   echo &quot;квадрат $a равен &quot;.($a*$a).&quot;&lt;br&gt;&quot;;
+};
+
+
+//while
+$a = 11;
+while ( $a &lt;= 19 )
+  {
+   echo &quot;квадрат $a равен &quot;.($a*$a).&quot;&lt;br&gt;&quot;;
+   $a++;
+  }
+
+while ( $a &lt;= 19 ):
+   echo &quot;квадрат $a равен &quot;.($a*$a).&quot;&lt;br&gt;&quot;;
+   $a++;
+endwhile;
+
+
+//dowhile
+
+do {
+   echo &quot;квадрат $a равен &quot;.($a*$a).&quot;&lt;br&gt;&quot;;
+   $a++;
+   }
+while ( $a &lt;= 19 );
+</rich_text>
+			</node>
+			<node custom_icon_id="0" foreground="" is_bold="False" name="array" prog_lang="custom-colors" readonly="False" tags="" unique_id="54">
+				<rich_text>  print_r ($arr);</rich_text>
+			</node>
+		</node>
+		<node custom_icon_id="0" foreground="" is_bold="False" name="$_GET, $_POST, $_COOKIE, $_REQUEST" prog_lang="custom-colors" readonly="False" tags="" unique_id="55">
+			<rich_text></rich_text>
+		</node>
+		<node custom_icon_id="0" foreground="" is_bold="False" name="http" prog_lang="custom-colors" readonly="False" tags="" unique_id="89">
+			<rich_text link="webs https://habrahabr.ru/post/308846/" scale="h1">https://habrahabr.ru/post/308846/</rich_text>
+		</node>
+	</node>
+	<node custom_icon_id="0" foreground="" is_bold="False" name="Ubuntu" prog_lang="custom-colors" readonly="False" tags="" unique_id="60">
+		<rich_text>which git  // покажет путь к исполняемому файлу программы git
+
+﻿service --status-all  // все ﻿services, зарегистрированное в системе</rich_text>
+	</node>
+	<node custom_icon_id="0" foreground="" is_bold="False" name="Testing" prog_lang="custom-colors" readonly="False" tags="" unique_id="96">
+		<rich_text></rich_text>
+		<node custom_icon_id="0" foreground="" is_bold="False" name="Mock test" prog_lang="custom-colors" readonly="False" tags="" unique_id="77">
+			<rich_text></rich_text>
+		</node>
+		<node custom_icon_id="0" foreground="" is_bold="False" name="Jasmine" prog_lang="custom-colors" readonly="False" tags="" unique_id="97">
+			<rich_text link="webs https://www.npmjs.com/package/jasmine#initializing">https://www.npmjs.com/package/jasmine#initializing</rich_text>
+			<rich_text>
+
+</rich_text>
+			<rich_text scale="h1">Install</rich_text>
+			<rich_text>
+
+</rich_text>
+			<rich_text scale="h2">﻿npm -g install phantomjs-prebuilt</rich_text>
+			<rich_text>
+
+</rich_text>
+			<rich_text foreground="#999988" style="italic">#</rich_text>
+			<rich_text> Global installation 
+</rich_text>
+			<rich_text scale="h2">﻿npm install jasmine-node -g</rich_text>
+			<rich_text>
+
+</rich_text>
+			<rich_text foreground="#999988" style="italic">#</rich_text>
+			<rich_text> Local installation: 
+sudo </rich_text>
+			<rich_text scale="h2">npm install --save-dev jasmine</rich_text>
+			<rich_text>
+
+
+</rich_text>
+			<rich_text scale="h1">Initializing:</rich_text>
+			<rich_text>
+</rich_text>
+			<rich_text scale="h2">﻿jasmine init</rich_text>
+			<rich_text>
+
+</rich_text>
+			<rich_text scale="h1">﻿
+Usage:
+</rich_text>
+			<rich_text scale="h2">﻿jasmine</rich_text>
+			<node custom_icon_id="0" foreground="" is_bold="False" name="example" prog_lang="custom-colors" readonly="False" tags="" unique_id="98">
+				<rich_text>Function:
+</rich_text>
+				<rich_text weight="heavy">src/ij/app.js</rich_text>
+				<rich_text>
+
+</rich_text>
+				<rich_text foreground="#cc7832" weight="heavy">function </rich_text>
+				<rich_text foreground="#a5a52a2a2a2a">Foo</rich_text>
+				<rich_text>(a) {
+    </rich_text>
+				<rich_text foreground="#cc7832" weight="heavy">return </rich_text>
+				<rich_text foreground="#cc7832">a + a;
+</rich_text>
+				<rich_text>}</rich_text>
+				<rich_text foreground="#cc7832">;
+ </rich_text>
+				<rich_text>module.</rich_text>
+				<rich_text foreground="#a5a52a2a2a2a">exports</rich_text>
+				<rich_text foreground="#ffc66d"> </rich_text>
+				<rich_text>= </rich_text>
+				<rich_text foreground="#a5a52a2a2a2a">Foo</rich_text>
+				<rich_text foreground="#cc7832">;
+</rich_text>
+				<rich_text>
+
+
+</rich_text>
+				<rich_text weight="heavy">spec/appSpec.js</rich_text>
+				<rich_text>
+
+</rich_text>
+				<rich_text foreground="#cc7832" weight="heavy">var </rich_text>
+				<rich_text foreground="#cc7832">Foo = require(</rich_text>
+				<rich_text foreground="#6a8759">'../src/js/app.js'</rich_text>
+				<rich_text>)</rich_text>
+				<rich_text foreground="#cc7832">;
+</rich_text>
+				<rich_text>describe(</rich_text>
+				<rich_text foreground="#6a8759">&quot; add txt &quot;</rich_text>
+				<rich_text foreground="#cc7832">, </rich_text>
+				<rich_text foreground="#cc7832" weight="heavy">function </rich_text>
+				<rich_text foreground="#cc7832">() {
+        </rich_text>
+				<rich_text foreground="#cc7832" weight="heavy">var </rich_text>
+				<rich_text foreground="#cc7832">foo = Foo (</rich_text>
+				<rich_text foreground="#6897bb">2</rich_text>
+				<rich_text>)</rich_text>
+				<rich_text foreground="#cc7832">;
+        </rich_text>
+				<rich_text>it(</rich_text>
+				<rich_text foreground="#6a8759">'foo'</rich_text>
+				<rich_text foreground="#cc7832">, </rich_text>
+				<rich_text foreground="#cc7832" weight="heavy">function</rich_text>
+				<rich_text foreground="#cc7832">(){
+            expect(foo).toBe(</rich_text>
+				<rich_text foreground="#6897bb">4</rich_text>
+				<rich_text>)</rich_text>
+				<rich_text foreground="#cc7832">;
+        </rich_text>
+				<rich_text>})</rich_text>
+				<rich_text foreground="#cc7832">;
+</rich_text>
+				<rich_text>})</rich_text>
+				<rich_text foreground="#cc7832">;</rich_text>
+				<rich_text>
+
+-------------------------------------------------------------------
+Object:
+</rich_text>
+				<rich_text weight="heavy">src/ij/app.js</rich_text>
+				<rich_text>
+</rich_text>
+				<rich_text foreground="#a5a52a2a2a2a">appl </rich_text>
+				<rich_text>= {
+    </rich_text>
+				<rich_text foreground="#a5a52a2a2a2a">sum</rich_text>
+				<rich_text>: </rich_text>
+				<rich_text foreground="#cc7832" weight="heavy">function </rich_text>
+				<rich_text foreground="#cc7832">(a, </rich_text>
+				<rich_text>b) {
+        </rich_text>
+				<rich_text foreground="#cc7832" weight="heavy">return </rich_text>
+				<rich_text foreground="#cc7832">a + b;
+    </rich_text>
+				<rich_text>}</rich_text>
+				<rich_text foreground="#cc7832">,
+</rich_text>
+				<rich_text>}
+ module.</rich_text>
+				<rich_text foreground="#a5a52a2a2a2a">exports</rich_text>
+				<rich_text foreground="#ffc66d"> </rich_text>
+				<rich_text>= </rich_text>
+				<rich_text foreground="#a5a52a2a2a2a">appl</rich_text>
+				<rich_text foreground="#cc7832">;</rich_text>
+				<rich_text>
+ 
+ </rich_text>
+				<rich_text weight="heavy">spec/appSpec.js</rich_text>
+				<rich_text>
+</rich_text>
+				<rich_text foreground="#cc7832" weight="heavy">var </rich_text>
+				<rich_text foreground="#cc7832">Appl = require(</rich_text>
+				<rich_text foreground="#6a8759">'../src/js/app.js'</rich_text>
+				<rich_text>)</rich_text>
+				<rich_text foreground="#cc7832">;
+</rich_text>
+				<rich_text>xdescribe(</rich_text>
+				<rich_text foreground="#6a8759">&quot; app &quot;</rich_text>
+				<rich_text foreground="#cc7832">, </rich_text>
+				<rich_text foreground="#cc7832" weight="heavy">function </rich_text>
+				<rich_text foreground="#cc7832">() {                                      // x - switch OFF jasnine test
+    it(</rich_text>
+				<rich_text foreground="#6a8759">&quot;sum()&quot;</rich_text>
+				<rich_text foreground="#cc7832">, </rich_text>
+				<rich_text foreground="#cc7832" weight="heavy">function </rich_text>
+				<rich_text foreground="#cc7832">() {
+        </rich_text>
+				<rich_text foreground="#808080">//prepare
+        </rich_text>
+				<rich_text>expect(Appl .</rich_text>
+				<rich_text foreground="#00001b1b3333">sum</rich_text>
+				<rich_text>(</rich_text>
+				<rich_text foreground="#6897bb">3</rich_text>
+				<rich_text foreground="#cc7832">, </rich_text>
+				<rich_text foreground="#6897bb">6</rich_text>
+				<rich_text>)).toEqual(</rich_text>
+				<rich_text foreground="#6897bb">9</rich_text>
+				<rich_text>)</rich_text>
+				<rich_text foreground="#cc7832">;    // ok
+        </rich_text>
+				<rich_text>expect(Appl .</rich_text>
+				<rich_text foreground="#00001b1b3333">sum</rich_text>
+				<rich_text>(</rich_text>
+				<rich_text foreground="#6897bb">3</rich_text>
+				<rich_text foreground="#cc7832">, </rich_text>
+				<rich_text foreground="#6897bb">6</rich_text>
+				<rich_text>)).toEqual(</rich_text>
+				<rich_text foreground="#6897bb">18</rich_text>
+				<rich_text>)</rich_text>
+				<rich_text foreground="#cc7832">;  //error
+    </rich_text>
+				<rich_text>})</rich_text>
+				<rich_text foreground="#cc7832">;
+</rich_text>
+				<rich_text>})</rich_text>
+				<rich_text foreground="#cc7832">;</rich_text>
+				<rich_text>
+
+
+/----------------------------- JQUERY----------------------------/
+</rich_text>
+				<rich_text weight="heavy">spec/appSpec.js</rich_text>
+				<rich_text>
+
+</rich_text>
+				<rich_text foreground="#cc7832" weight="heavy">var </rich_text>
+				<rich_text foreground="#cc7832">Foo = require(</rich_text>
+				<rich_text foreground="#6a8759">'../src/js/app.js'</rich_text>
+				<rich_text>)</rich_text>
+				<rich_text foreground="#cc7832">;
+</rich_text>
+				<rich_text>describe(</rich_text>
+				<rich_text foreground="#6a8759">&quot; add txt &quot;</rich_text>
+				<rich_text foreground="#cc7832">, </rich_text>
+				<rich_text foreground="#cc7832" weight="heavy">function </rich_text>
+				<rich_text foreground="#cc7832">() {
+        var elem;
+        beforeEach(function() {
+                elem = $('&lt;div id=&quot;anyID&quot;&gt; &lt;p&gt;Test Jasmin JQuery&lt;/p&gt;&lt;/div&gt;');
+        });
+
+        </rich_text>
+				<rich_text>it(</rich_text>
+				<rich_text foreground="#6a8759">'allows us to search with CSS selectors'</rich_text>
+				<rich_text foreground="#cc7832">, </rich_text>
+				<rich_text foreground="#cc7832" weight="heavy">function</rich_text>
+				<rich_text foreground="#cc7832">(){
+            expect(elem).toBe(</rich_text>
+				<rich_text>'#anyID')</rich_text>
+				<rich_text foreground="#cc7832">;
+        </rich_text>
+				<rich_text>})</rich_text>
+				<rich_text foreground="#cc7832">;
+</rich_text>
+				<rich_text>})</rich_text>
+				<rich_text foreground="#cc7832">;</rich_text>
+			</node>
+		</node>
+	</node>
+	<node custom_icon_id="0" foreground="" is_bold="False" name=" RequireJS" prog_lang="custom-colors" readonly="False" tags="" unique_id="76">
+		<rich_text></rich_text>
+	</node>
+	<node custom_icon_id="0" foreground="" is_bold="False" name="IDE" prog_lang="custom-colors" readonly="False" tags="" unique_id="86">
+		<rich_text></rich_text>
+		<node custom_icon_id="0" foreground="" is_bold="False" name="Atom" prog_lang="custom-colors" readonly="False" tags="" unique_id="87">
+			<rich_text background="#00001b1b3333" foreground="#ffffffffffff" link="webs https://atom.io/" scale="h1">https://atom.io/</rich_text>
+			<rich_text background="#ffffffffffff">
+</rich_text>
+			<rich_text>
+</rich_text>
+			<rich_text link="webs https://atom.io/packages" scale="h2">https://atom.io/packages</rich_text>
+			<rich_text>
+
+</rich_text>
+			<rich_text link="webs https://atom.io/themes" scale="h2">https://atom.io/themes</rich_text>
+			<rich_text>
+
+﻿
+</rich_text>
+			<rich_text scale="h1">How to Set up Atom 1.0 with your Preferences   </rich_text>
+			<rich_text>
+</rich_text>
+			<rich_text link="webs https://www.youtube.com/watch?v=U5POoGSrtGg" scale="h2">https://www.youtube.com/watch?v=U5POoGSrtGg</rich_text>
+			<rich_text>
+
+sudo add-apt-repository ppa:webupd8team/atom
+sudo apt-get update
+sudo apt-get install atom
+
+
+
+Ctrl+W  закрытие панели
+
+snippet
+Alt+Shift+S 
+Create snippet : Edit-Open Your Snippets
+
+'.source.coffee':  		text.html.basic
+'Console log':
+'prefix': 'log'
+'body': 'console.log $1'</rich_text>
+			<node custom_icon_id="0" foreground="" is_bold="False" name="Electron" prog_lang="custom-colors" readonly="False" tags="" unique_id="88">
+				<rich_text link="webs http://electron.atom.io/" scale="h1">http://electron.atom.io/</rich_text>
+				<rich_text>
+
+</rich_text>
+				<rich_text scale="h2">﻿Build cross platform desktop apps        with JavaScript, HTML, and CSS</rich_text>
+			</node>
+			<node custom_icon_id="0" foreground="" is_bold="False" name="plugins" prog_lang="custom-colors" readonly="False" tags="" unique_id="7">
+				<rich_text>
+1) autoCompite
+Ctrl+Space
+https://atom.io/packages/autocomplete...
+
+2) atom-beautify
+Ctrl+Alt+B
+https://atom.io/packages/atom-beautify
+
+3) color-picker
+Ctrl+Alt+C
+https://atom.io/packages/color-picker
+
+4) emmet
+ http://docs.emmet.io/cheat-sheet/
+     
+5) git-plus
+Ctrl+Shft+H
+https://atom.io/packages/git-plus
+
+6) mini-map
+https://atom.io/packages/minimap
+
+7) remote ftp
+https://atom.io/packages/remote-ftp
+https://www.youtube.com/watch?v=9hZOCQkHb4Y  6 минутa
+
+
+
+
+
+</rich_text>
+			</node>
+			<node custom_icon_id="0" foreground="" is_bold="False" name="emmet" prog_lang="custom-colors" readonly="False" tags="" unique_id="8">
+				<rich_text>div&gt;ul&gt;li    								вложение элементов один в другой
+
+div+p+bq									расположение на одном уровне
+
+div+div&gt;p&gt;span^div							переход на уровень вверх
+
+ul&gt;li *5											дублирование элементов
+
+div#head+div.class1.class2						ввод атрибутов
+		&lt;div id=&quot;head&quot;&gt;&lt;/div&gt;
+		&lt;div class=&quot;class1 class2&quot;&gt;&lt;/div&gt;
+
+td[title=&quot;hello&quot; colspan=3]						собственные атрибуты
+		&lt;td title=&quot;hello&quot; colspan=&quot;3&quot;&gt;&lt;/td&gt;
+
+ul&gt;li.item$ *5									нумерация элементов
+
+a{click me}										ввод текста
+	&lt;a href=&quot;&quot;&gt;click me&lt;/a&gt;
+
+https://atom.io/packages/emmet
+
+ul.menu&gt;(li&gt;a{Пункт $})*5    
+получим
+                &lt;ul class=&quot;menu&quot;&gt;
+                 &lt;li&gt;&lt;a href=&quot;&quot;&gt;Пункт 1&lt;/a&gt;&lt;/li&gt;
+                 &lt;li&gt;&lt;a href=&quot;&quot;&gt;Пункт 2&lt;/a&gt;&lt;/li&gt;
+                 &lt;li&gt;&lt;a href=&quot;&quot;&gt;Пункт 3&lt;/a&gt;&lt;/li&gt;
+                 &lt;li&gt;&lt;a href=&quot;&quot;&gt;Пункт 4&lt;/a&gt;&lt;/li&gt;
+                 &lt;li&gt;&lt;a href=&quot;&quot;&gt;Пункт 5&lt;/a&gt;&lt;/li&gt;
+               &lt;/ul&gt;
+               
+               
+               </rich_text>
+				<rich_text link="webs http://docs.emmet.io/cheat-sheet/">http://docs.emmet.io/cheat-sheet/</rich_text>
+				<rich_text>
+               </rich_text>
+			</node>
+		</node>
+		<node custom_icon_id="0" foreground="" is_bold="False" name="breckets" prog_lang="custom-colors" readonly="False" tags="" unique_id="99">
+			<rich_text>﻿
+</rich_text>
+			<rich_text scale="h1">      Обзор открытой IDE Adobe Brackets</rich_text>
+			<rich_text>
+</rich_text>
+			<rich_text link="webs https://habrahabr.ru/post/190454/">https://habrahabr.ru/post/190454/</rich_text>
+		</node>
+	</node>
+	<node custom_icon_id="0" foreground="" is_bold="False" name="Habrahabr.ru Дайджест" prog_lang="custom-colors" readonly="False" tags="" unique_id="90">
+		<rich_text link="webs https://habrahabr.ru/company/zfort/blog/" scale="h1">https://habrahabr.ru/company/zfort/blog/</rich_text>
+		<rich_text>
+
+</rich_text>
+		<rich_text link="webs http://www.jstips.co/" scale="h1">http://www.jstips.co/</rich_text>
+		<rich_text>  блог о JS</rich_text>
+	</node>
+</cherrytree>
